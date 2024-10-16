@@ -6,7 +6,13 @@
  */
 export function formatDate(date) {
   const formatDate = new Date(date);
-  return formatDate.toLocaleString('zh', {year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric'});
+  return formatDate.toLocaleString("zh", {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+  });
 }
 
 /**
@@ -16,11 +22,11 @@ export function formatDate(date) {
  * @returns 参数值
  */
 export function getQueryParam(paramName) {
-  const reg = new RegExp("(^|&)"+ paramName +"=([^&]*)(&|$)");
+  const reg = new RegExp("(^|&)" + paramName + "=([^&]*)(&|$)");
   let value = decodeURIComponent(window.location.search.substr(1)).match(reg);
   if (value != null) {
     return unescape(value[2]);
-  } 
+  }
   return null;
 }
 
@@ -32,7 +38,7 @@ export function getQueryParam(paramName) {
  */
 export function goToLink(url, paramName, paramValue) {
   if (paramName) {
-    window.location.href = url + '?' + paramName + '=' + paramValue;
+    window.location.href = url + "?" + paramName + "=" + paramValue;
   } else {
     window.location.href = url;
   }
@@ -44,7 +50,20 @@ export function goToLink(url, paramName, paramValue) {
  * @param year 年份
  */
 export function getChineseZodiac(year) {
-  const arr = ['monkey', 'rooster', 'dog', 'pig', 'rat', 'ox', 'tiger', 'rabbit', 'dragon', 'snake', 'horse', 'goat'];
+  const arr = [
+    "monkey",
+    "rooster",
+    "dog",
+    "pig",
+    "rat",
+    "ox",
+    "tiger",
+    "rabbit",
+    "dragon",
+    "snake",
+    "horse",
+    "goat",
+  ];
   return arr[year % 12];
 }
 
@@ -54,6 +73,19 @@ export function getChineseZodiac(year) {
  * @param year 年份
  */
 export function getChineseZodiacAlias(year) {
-  const arr = ['猴年', '鸡年', '狗年', '猪年', '鼠年', '牛年', '虎年', '兔年', '龙年', '蛇年', '马年', '羊年'];
+  const arr = [
+    "猴年",
+    "鸡年",
+    "狗年",
+    "猪年",
+    "鼠年",
+    "牛年",
+    "虎年",
+    "兔年",
+    "龙年",
+    "蛇年",
+    "马年",
+    "羊年",
+  ];
   return arr[year % 12];
 }

@@ -1,13 +1,13 @@
 ---
 layout: home
 
-title: 查尔斯的知识库
-titleTemplate: 个人技术知识库，记录和分享个人碎片化、结构化、体系化的技术知识内容
+title: 知识库
+titleTemplate: 个人技术知识库
 
 hero:
-  name: 查尔斯的知识库
-  text: 专注 & 洞察 & 分享
-  tagline: 个人技术知识库，记录 & 分享个人碎片化、结构化、体系化的技术知识内容。
+  name: 知识库
+  text: 记录 & 分享
+  tagline: 个人技术知识库
   image:
     src: /logo.png
     alt: Logo
@@ -22,7 +22,7 @@ hero:
 features:
   - icon:
       src: img/svg/focus.svg
-    title: 保持专注
+    title: 保持记录
     details: “简单比复杂更难，你必须努力让你的想法变得清晰明了，让它变得简单。一旦你做到了简单，你就能搬动大山。” -- 乔布斯
   - icon:
       src: img/svg/insight.svg

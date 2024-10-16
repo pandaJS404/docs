@@ -1,7 +1,7 @@
-import { request } from './config';
+import { request } from "./config";
 
 export const getArticleViewCount = (id, pageUrl, call) => {
-  request.get(`/article/view/${id}?pageUrl=${pageUrl}`, {}).then(result => {
+  request.get(`/article/view/${id}?pageUrl=${pageUrl}`, {}).then((result) => {
     call(process(result));
   });
 };
@@ -14,4 +14,4 @@ function process(result) {
   }
 }
 
-export default { getArticleViewCount }
+export default { getArticleViewCount };
