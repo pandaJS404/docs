@@ -1,5 +1,6 @@
 <template>
   <div class="meta-wrapper">
+    ArticleMetadata
     <div class="meta-item original">
       <a-tag v-if="isOriginal" color="orangered" title="原创文章">
         <template #icon>

@@ -4,21 +4,13 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '我的分类',
     items: [
-      { text: 'Bug万象集', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
-      { text: '"杂碎"逆袭史', link: '/categories/fragments/index', activeMatch: '/categories/fragments/' },
-      { text: '工具四海谈', link: '/categories/tools/index', activeMatch: '/categories/tools/' },
-      { text: '方案春秋志', link: '/categories/solutions/index', activeMatch: '/categories/solutions/' }
+      { text: '测试分类1', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
+      { text: '测试分类2', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
+      { text: '测试分类3', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
+      { text: '测试分类4', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
+      { text: '测试分类5', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
     ],
     activeMatch: '/categories/'
-  },
-  {
-    text: '我的小册',
-    items: [
-      { text: 'Java基础快速入门', link: '/courses/java/index', activeMatch: '/courses/java/' },
-      { text: 'MySQL快速入门', link: '/courses/mysql/index', activeMatch: '/courses/mysql/' },
-      { text: 'MyBatis快速入门', link: '/courses/mybatis/index', activeMatch: '/courses/mybatis/' }
-    ],
-    activeMatch: '/courses/'
   },
   {
     text: '我的标签',

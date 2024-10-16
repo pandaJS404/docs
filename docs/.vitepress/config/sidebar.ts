@@ -1,29 +1,25 @@
-import type { DefaultTheme } from 'vitepress';
-import fg from 'fast-glob';
-import matter from 'gray-matter';
-import { getChineseZodiac, getChineseZodiacAlias } from '../theme/utils.ts';
+import type { DefaultTheme } from "vitepress";
+import fg from "fast-glob";
+import matter from "gray-matter";
+import { getChineseZodiac, getChineseZodiacAlias } from "../theme/utils.ts";
 const sync = fg.sync;
 
-export const sidebar: DefaultTheme.Config['sidebar'] = {
-  '/categories/issues/': getItemsByDate("categories/issues"),
-  '/categories/fragments/': getItemsByDate("categories/fragments"),
-  '/categories/solutions/': getItemsByDate("categories/solutions"),
-  '/categories/tools/': getItemsByDate("categories/tools"),
-
-  '/courses/java/': getItems("courses/java"),
-  '/courses/mysql/': getItems("courses/mysql"),
-  '/courses/mybatis/': getItems("courses/mybatis"),
-}
+export const sidebar: DefaultTheme.Config["sidebar"] = {
+  "/categories/issues/": getItemsByDate("categories/issues"),
+  "/categories/fragments/": getItemsByDate("categories/fragments"),
+  "/categories/solutions/": getItemsByDate("categories/solutions"),
+  "/categories/tools/": getItemsByDate("categories/tools"),
+};
 
 /**
  * 根据 某分类/YYYY/MM/dd/xxx.md 的目录格式, 获取侧边栏分组及分组下标题
- * 
+ *
  * /categories/issues/2022/07/20/xxx.md
- * 
+ *
  * @param path 扫描基础路径
  * @returns {DefaultTheme.SidebarItem[]}
  */
-function getItemsByDate (path: string) {
+function getItemsByDate(path: string) {
   // 侧边栏年份分组数组
   let yearGroups: DefaultTheme.SidebarItem[] = [];
   // 置顶数组
@@ -43,7 +39,7 @@ function getItemsByDate (path: string) {
       onlyDirectories: true,
       objectMode: true,
     }).forEach(({ name }) => {
-      let month = name
+      let month = name;
 
       // 3.获取所有日期目录
       sync(`docs/${path}/${year}/${month}/*`, {
@@ -62,27 +58,37 @@ function getItemsByDate (path: string) {
             // 向置顶分组前追加标题
             topArticleItems.unshift({
               text: data.title,
-              link: `/${path}/${year}/${month}/${day}/${article.name.replace('.md', '')}`,
+              link: `/${path}/${year}/${month}/${day}/${article.name.replace(
+                ".md",
+                ""
+              )}`,
             });
           }
 
           // 向年份分组前追加标题
           articleItems.unshift({
             text: data.title,
-            link: `/${path}/${year}/${month}/${day}/${article.name.replace('.md', '')}`,
+            link: `/${path}/${year}/${month}/${day}/${article.name.replace(
+              ".md",
+              ""
+            )}`,
           });
-        })
-      })
-    })
+        });
+      });
+    });
 
     // 添加年份分组
     yearGroups.unshift({
-      text: `<img class="chinese-zodiac" style="position: static; vertical-align: middle; padding-bottom: 3px;" src="/img/svg/chinese-zodiac/${getChineseZodiac(year.replace('年', ''))}.svg" title="${getChineseZodiacAlias(year.replace('年', ''))}" alt="生肖">
+      text: `<img class="chinese-zodiac" style="position: static; vertical-align: middle; padding-bottom: 3px;" src="/img/svg/chinese-zodiac/${getChineseZodiac(
+        year.replace("年", "")
+      )}.svg" title="${getChineseZodiacAlias(
+        year.replace("年", "")
+      )}" alt="生肖">
             ${year}年 (${articleItems.length}篇)`,
       items: articleItems,
       collapsed: true,
     });
-  })
+  });
 
   if (topArticleItems.length > 0) {
     // 添加置顶分组
@@ -107,13 +113,13 @@ function getItemsByDate (path: string) {
 
 /**
  * 根据 某小课/序号-分组/序号-xxx.md 的目录格式, 获取侧边栏分组及分组下标题
- * 
+ *
  * courses/mybatis/01-MyBatis基础/01-xxx.md
- * 
+ *
  * @param path 扫描基础路径
  * @returns {DefaultTheme.SidebarItem[]}
  */
-function getItems (path: string) {
+function getItems(path: string) {
   // 侧边栏分组数组
   let groups: DefaultTheme.SidebarItem[] = [];
   // 侧边栏分组下标题数组
@@ -139,22 +145,25 @@ function getItems (path: string) {
       // 向前追加标题
       items.push({
         text: data.title,
-        link: `/${path}/${groupName}/${article.name.replace('.md', '')}`,
+        link: `/${path}/${groupName}/${article.name.replace(".md", "")}`,
       });
       total += 1;
-    })
+    });
 
     // 3.向前追加到分组
     // 当分组内文章数量少于 A 篇或文章总数显示超过 B 篇时，自动折叠分组
     groups.push({
-      text: `${groupName.substring(groupName.indexOf('-') + 1)} (${items.length}篇)`,
+      text: `${groupName.substring(groupName.indexOf("-") + 1)} (${
+        items.length
+      }篇)`,
       items: items,
-      collapsed: items.length < groupCollapsedSize || total > titleCollapsedSize,
-    })
+      collapsed:
+        items.length < groupCollapsedSize || total > titleCollapsedSize,
+    });
 
     // 4.清空侧边栏分组下标题数组
     items = [];
-  })
+  });
 
   // 添加序号
   addOrderNumber(groups);
@@ -163,7 +172,7 @@ function getItems (path: string) {
 
 /**
  * 添加序号
- * 
+ *
  * @param groups 分组数据
  */
 function addOrderNumber(groups) {
