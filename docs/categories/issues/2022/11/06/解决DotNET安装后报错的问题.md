@@ -1,13 +1,13 @@
 ---
-title: 解决 DotNet 安装完，报错：Couldn't find a valid ICU package installed on the system. Please install libicu using your package manager and try again
+title: 解决 DotNet 安装
 author: 查尔斯
 date: 2022/11/06 15:35
 categories:
- - Bug万象集
+  - Bug万象集
 tags:
- - DotNet
- - Linux
- - CentOS
+  - DotNet
+  - Linux
+  - CentOS
 ---
 
 # 解决 DotNet 安装完，报错：Couldn't find a valid ICU package installed on the system. Please install libicu using your package manager and try again
@@ -46,7 +46,7 @@ Aborted
 
 简单翻译一下关键错误信息。
 
-> 进程终止。找不到系统上安装的有效 ICU 包。请使用包管理器安装 libicu，然后重试。或者，如果您想在不支持全球化的情况下运行，可以将配置标志 System.Globalization.Invariant 设置为 true。请访问 https://aka.ms/dotnet-missing-libicu 了解更多信息。
+> 进程终止。找不到系统上安装的有效 ICU 包。请使用包管理器安装 libicu，然后重试。或者，如果您想在不支持全球化的情况下运行，可以将配置标志 System.Globalization.Invariant 设置为 true。请访问 <https://aka.ms/dotnet-missing-libicu> 了解更多信息。
 
 从提示信息来看，问题的原因是当前系统没有安装 DotNet 需要的 `libicu` 库。
 
@@ -66,5 +66,5 @@ yum -y install libicu
 
 ## 参考资料
 
-1. 在 CentOS 上安装 .NET SDK 或 .NET 运行时：https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-centos
-2. 用于全球化的运行时配置选项：https://learn.microsoft.com/zh-cn/dotnet/core/runtime-config/globalization
+1. 在 CentOS 上安装 .NET SDK 或 .NET 运行时：<https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-centos>
+2. 用于全球化的运行时配置选项：<https://learn.microsoft.com/zh-cn/dotnet/core/runtime-config/globalization>

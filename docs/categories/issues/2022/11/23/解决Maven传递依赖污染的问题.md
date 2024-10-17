@@ -1,12 +1,12 @@
 ---
-title: 解决 Maven 传递依赖污染的问题
+title: Maven 传递依赖污染的问题
 author: 查尔斯
 date: 2022/11/21 21:30
 categories:
- - Bug万象集
+  - Bug万象集
 tags:
- - Maven
- - Java
+  - Maven
+  - Java
 showComment: false
 ---
 
@@ -31,7 +31,7 @@ showComment: false
 
 ## 原因分析
 
-下面贴上笔者项目的 `pom.xml`，这当然不是笔者出问题的项目了，为了简单，笔者也没有特意创建父子项目场景，但其中关键的部分就是下面这些。很简单的项目依赖配置，锁定了  JustAuth 和 Fastjson2 的版本，并引入了这两个依赖。
+下面贴上笔者项目的 `pom.xml`，这当然不是笔者出问题的项目了，为了简单，笔者也没有特意创建父子项目场景，但其中关键的部分就是下面这些。很简单的项目依赖配置，锁定了 JustAuth 和 Fastjson2 的版本，并引入了这两个依赖。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -128,7 +128,7 @@ showComment: false
        <maven.compiler.target>8</maven.compiler.target>
        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
    </properties>
-   
+
    <!-- 依赖版本锁定 -->
    <dependencyManagement>
        <dependencies>
@@ -147,7 +147,7 @@ showComment: false
            </dependency>
        </dependencies>
    </dependencyManagement>
-   
+
    <!-- 依赖引入 -->
    <dependencies>
        <!-- JustAuth（开箱即用的整合第三方登录的开源组件 ） -->
@@ -165,7 +165,6 @@ showComment: false
 1. 笔者不希望在写代码时，被 IntelliJ IDEA 提示这个和笔者无关的依赖中的类。
 
 2. JustAuth 在使用时还能使用到这个依赖。
-
 
 其实关键是 IntelliJ IDEA 提示这块的问题，那 IntelliJ IDEA 这提示的来源是什么？实际就是它在编译项目时引入了这些依赖，那么这个依赖能不能不在编译时提供，而是仅在运行时提供呢？
 

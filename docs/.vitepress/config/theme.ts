@@ -16,8 +16,8 @@ export const themeConfig: DefaultTheme.Config = {
   },
 
   darkModeSwitchLabel: "切换日光/暗黑模式",
-  lightModeSwitchTitle: "切换到日间模式",
-  darkModeSwitchTitle: "切换到夜间模式",
+  lightModeSwitchTitle: "切换到亮色模式",
+  darkModeSwitchTitle: "切换到暗黑模式",
   sidebarMenuLabel: "文章",
   returnToTopLabel: "返回顶部",
   lastUpdatedText: "最后更新时间", // 最后更新时间文本配置, 需先配置lastUpdated为true
@@ -69,6 +69,6 @@ export const themeConfig: DefaultTheme.Config = {
 
   footer: {
     message: "Released under the MIT License.",
-    copyright: "Copyright © 2019-present Evan You",
+    copyright: "Copyright ©2024-present PandaJS",
   },
 };

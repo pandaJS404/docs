@@ -1,13 +1,13 @@
 ---
-title: 解决 Docker 安装 Prometheus 启动报 permission denied 的问题
+title: 解决 Docker 安装 Prometheus
 author: 查尔斯
 date: 2022/11/04 20:30
 categories:
- - Bug万象集
+  - Bug万象集
 tags:
- - Prometheus
- - Docker
- - Linux
+  - Prometheus
+  - Docker
+  - Linux
 ---
 
 # 解决 Docker 安装 Prometheus 启动报 permission denied 的问题
@@ -47,7 +47,7 @@ panic: Unable to create mmap-ed active query log
 为了方便大家进行原因分析，笔者把 docker-compose 的 Prometheus 部分脚本贴在下方。
 
 ```yaml
-version: '3'
+version: "3"
 services:
   prometheus:
     container_name: prometheus
@@ -60,8 +60,7 @@ services:
     volumes:
       - /opt/disk/docker/volumes/prometheus/conf:/opt/bitnami/prometheus/conf
       - /opt/disk/docker/volumes/prometheus/data:/opt/bitnami/prometheus/data
-    command:
-      --config.file=/opt/bitnami/prometheus/conf/prometheus.yml
+    command: --config.file=/opt/bitnami/prometheus/conf/prometheus.yml
       --web.enable-lifecycle
       --storage.tsdb.retention.time=90d
     privileged: true
