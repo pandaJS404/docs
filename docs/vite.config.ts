@@ -18,7 +18,7 @@ export default defineConfig({
   },
   server: {
     host: true,
-    open: false,
+    open: true,
     hmr: true,
     port: 9999,
     proxy: {

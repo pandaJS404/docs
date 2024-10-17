@@ -2,6 +2,7 @@
   <ClientOnly>
     <Layout>
       <template #doc-footer-before>
+        <!-- 版权组件 -->
         <Copyright
           v-if="
             (frontmatter?.aside ?? true) &&
@@ -12,16 +13,18 @@
         />
       </template>
       <template #doc-after>
-        <Comment
+        <!-- 评论组件 gitalk -->
+        <!-- <Comment
           v-if="
             (theme.commentConfig?.showComment ?? true) &&
             (frontmatter?.showComment ?? true)
           "
           :commentConfig="theme.commentConfig"
           :key="md5(page.relativePath)"
-        />
+        /> -->
       </template>
       <template #layout-bottom>
+        <!-- 联网备案组件组件 -->
         <Footer
           v-if="
             !hasSidebar &&

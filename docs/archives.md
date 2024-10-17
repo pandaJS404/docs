@@ -7,5 +7,5 @@ showComment: false
 ---
 
 <ClientOnly>
-	<Archive />
+ <Archive />
 </ClientOnly>
