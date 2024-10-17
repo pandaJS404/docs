@@ -63,7 +63,7 @@ jobs:
       - name: Deploy GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          BRANCH: pages
+          BRANCH: gh-pages
           FOLDER: docs/.vitepress/dist
 
   # 任务2: 部署 Gitee Pages
