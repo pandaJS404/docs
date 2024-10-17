@@ -1,10 +1,10 @@
-name: Deploy Pages
+name: 部署文档
 
 on:
   # 推送时执行
   push:
     branches: [main, master]
-  # pr 时执行
+  # pr 时执行~
   pull_request:
     branches: [main, master]
   # 定时执行，字段含义：分钟 小时 日 月 星期
@@ -22,49 +22,54 @@ on:
   # 可手动执行
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  # 任务1: 部署 GitHub Pages
-  deploy-github-pages:
+  deploy-gh-pages:
     runs-on: ubuntu-latest
     steps:
       # 1、检出源码
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           # 默认只拉取分支最近一次的 commit，可能会导致一些文章的 GitInfo 变量无法获取，设为 0 代表拉取所有分支所有提交
           fetch-depth: 0
       # 2、配置 Git
       # 主要是 quotePath，默认情况下，文件名包含中文时，git 会使用引号把文件名括起来，这会导致 action 中无法读取 :GitInfo 变量
-      - name: Git Configuration
-        run: |
-          git config --global core.quotePath false
-          git config --global core.autocrlf false
-          git config --global core.safecrlf true
-          git config --global core.ignorecase false  
+          # 如果你文档需要 Git 子模块，取消注释下一行
+          # submodules: true
+
       # 3、安装 PNPM
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2
+      - name: 设置 pnpm
+        uses: pnpm/action-setup@v4
         with:
           version: latest
       # 4、安装 Node 环境
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: https://registry.npmjs.org
           cache: pnpm
       # 5、安装依赖
-      - name: Install dependencies
-        run: pnpm i --frozen-lockfile
+      - name: 安装依赖
+        run: |
+          corepack enable
+          pnpm install --frozen-lockfile
       # 6、打包
-      - name: Build
-        run: pnpm build
+      - name: 构建文档
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: |-
+          pnpm build
       # 7、部署 GitHub Pages
-      - name: Deploy GitHub Pages
+
+      - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          BRANCH: gh-pages
-          FOLDER: docs/.vitepress/dist
+          # 部署文档
+          branch: gh-pages
+          folder: docs/.vitepress/dist
 
   # 任务2: 部署 Gitee Pages
   # deploy-gitee-pages:
