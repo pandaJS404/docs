@@ -6,7 +6,7 @@ categories:
   - Bug万象集
 tags:
   - Maven
-  - Java
+  - JavaScript
 showComment: false
 ---
 

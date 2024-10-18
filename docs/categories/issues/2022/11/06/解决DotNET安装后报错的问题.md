@@ -5,7 +5,7 @@ date: 2022/11/06 15:35
 categories:
   - Bug万象集
 tags:
-  - DotNet
+  - JavaScript
   - Linux
   - CentOS
 ---

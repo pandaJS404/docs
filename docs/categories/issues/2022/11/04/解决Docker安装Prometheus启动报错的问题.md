@@ -5,7 +5,7 @@ date: 2022/11/04 20:30
 categories:
   - Bug万象集
 tags:
-  - Prometheus
+  - JavaScript
   - Docker
   - Linux
 ---

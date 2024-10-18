@@ -27,7 +27,7 @@
       <!-- 标签云 -->
       <WordCloud
         :dataList="dataList"
-        :style="{ width: '100%', height: '130px' }"
+        :style="{ width: '100%', height: '180px' }"
       />
       <a-row :gutter="24">
         <!-- 标签列表区域 -->
