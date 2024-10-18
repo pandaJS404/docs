@@ -17,7 +17,8 @@ hero:
       link: /categories/issues/index
     - theme: alt
       text: 在 GitHub 查看
-      link: https://github.com/Charles7c/charles7c.github.io
+      link:
+      # https://github.com/Charles7c/charles7c.github.io
 
 features:
   - icon:

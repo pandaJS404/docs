@@ -168,13 +168,13 @@
       <div class="year">
         <img
           class="chinese-zodiac"
-          @click="goToLink('/archives', 'year', year.replace('年', ''))"
+          @click="goToLink('/archives', 'year', year)"
           :src="
             '/img/svg/chinese-zodiac/' +
-            getChineseZodiac(year.replace('年', '')) +
+            getChineseZodiac(year) +
             '.svg'
           "
-          :title="getChineseZodiacAlias(year.replace('年', ''))"
+          :title="getChineseZodiacAlias(year)"
           alt="生肖"
         />
         <span>{{ year }}</span>
@@ -293,6 +293,7 @@ import {
   getChineseZodiac,
   getChineseZodiacAlias,
 } from "../utils.ts";
+//@ts-ignore
 import { data as articleData } from "../../../../article.data.js";
 
 // 文章原始数据和归档数据

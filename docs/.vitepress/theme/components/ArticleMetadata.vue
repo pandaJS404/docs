@@ -83,7 +83,7 @@
           ></path>
         </svg>
       </span>
-      <span class="meta-content" v-text="viewCount" :title="viewCount"></span>
+      <span class="meta-content" v-text="viewCount"></span>
     </div>
     <div class="meta-item" v-if="showCategory">
       <span class="meta-icon category">
@@ -154,7 +154,10 @@ dayjs.locale("zh-cn");
 
 // 定义文章属性
 const props = defineProps({
-  article: Object,
+  article: {
+    type: Object,
+    default: () => {},
+  },
   showCategory: {
     type: Boolean,
     default: true,
@@ -182,16 +185,17 @@ const {
   showViewCount,
   viewCount,
   date,
-  toDate,
   categories,
   tags,
   showCategory,
 } = toRefs(data);
+// toDate,
 
 if (data.showViewCount) {
   // 记录并获取文章阅读数（使用文章标题 + 发布时间生成 MD5 值，作为文章的唯一标识）
   onMounted(() => {
-    $api.getArticleViewCount(
+    //@ts-ignore
+    window.$api.getArticleViewCount(
       md5(props.article.title + props.article.date),
       location.href,
       function (viewCountData) {

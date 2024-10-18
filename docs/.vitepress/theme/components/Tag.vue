@@ -297,6 +297,7 @@
 import { computed, ref } from "vue";
 import md5 from "blueimp-md5";
 import { getQueryParam } from "../utils.ts";
+// @ts-ignore
 import { data as articleData } from "../../../../article.data.js";
 
 const tags = computed(() => initTags(articleData));
@@ -324,8 +325,8 @@ function initTags(articleData) {
 }
 
 // 点击指定Tag后进行选中
-let selectTag = ref("");
-const toggleTag = (tagTitle: string) => {
+let selectTag = ref<any>("");
+const toggleTag = (tagTitle: any) => {
   if (selectTag.value && selectTag.value == tagTitle) {
     selectTag.value = null;
   } else {
@@ -345,7 +346,7 @@ const dataList = computed(() => initWordCloud(tags));
  * [{"name": xx, "value": xx}]
  */
 function initWordCloud(tags) {
-  const dataList = [];
+  const dataList: any[] = [];
   for (let tag in tags.value) {
     dataList.push({ name: tag, value: tags.value[tag].length });
   }

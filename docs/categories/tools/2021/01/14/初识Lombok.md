@@ -3,30 +3,30 @@ title: 初识 Lombok
 author: 查尔斯
 date: 2021/01/14 09:05
 categories:
- - 工具四海谈
+  - 工具四海谈
 tags:
- - Java
- - Lombok
+  - Java
+  - Lombok
 ---
 
 # 初识 Lombok
 
 ## 前言
 
-**C：** 在 Java 开发中，为了符合 `封装` 这一面向对象特性，在构建 JavaBean 时往往要加上 `getter/setter` 方法。  
+**C：** 在 Java 开发中，为了符合 `封装` 这一面向对象特性，在构建 JavaBean 时往往要加上 `getter/setter` 方法。
 
-在封装的概念里，`getter` 和 `setter` 方法是我们提供给外界的统一访问入口，我们可以在其中添加合理的逻辑控制语句，来处理一些业务或解决一些不合理的赋值，非常好的特性！  
+在封装的概念里，`getter` 和 `setter` 方法是我们提供给外界的统一访问入口，我们可以在其中添加合理的逻辑控制语句，来处理一些业务或解决一些不合理的赋值，非常好的特性！
 
 但现代开发的实际使用中，我们编写的 JavaBean 的 `getter/setter` 方法体都是空的，显得非常冗余，但又不能去除。对此，我们在每次使用时，只能通过反复的心理暗示（IDE 自动生成快捷键、生成不费事儿）来麻痹自己。
 
-Eclipse 中是 `Alt + Shift+S > R`，IntelliJ IDEA 中是 `[FN] + Alt+Insert > Getter and Setter`。  
+Eclipse 中是 `Alt + Shift+S > R`，IntelliJ IDEA 中是 `[FN] + Alt+Insert > Getter and Setter`。
 
-笔者相信，这些快捷键大家都很熟悉，甚至不只是它们，一般我们还会用上无参构造、带参构造、重写 `toString`、重写 `equals` 、`hashCode` 等生成快捷键，每次创建 JavaBean，写完属性之后就是一通 "火花带闪电" 快速生成，就像下面的代码一样。  
+笔者相信，这些快捷键大家都很熟悉，甚至不只是它们，一般我们还会用上无参构造、带参构造、重写 `toString`、重写 `equals` 、`hashCode` 等生成快捷键，每次创建 JavaBean，写完属性之后就是一通 "火花带闪电" 快速生成，就像下面的代码一样。
 
 ```java
 /**
  * 宠物类
- * @author Charles7c
+ * @author
  * @date 2020-01-14
  */
 public class Pet {
@@ -35,7 +35,7 @@ public class Pet {
     private String name;
     /** 健康值 */
     private int health;
-    
+
     // getter/setter 方法
     public String getName() {
         return name;
@@ -66,7 +66,7 @@ public class Pet {
                 "name='" + name + '\'' +
                 ", health=" + health +
                 '}';
-    }	
+    }
 }
 ```
 
@@ -78,22 +78,22 @@ public class Pet {
 
 ## 概述
 
-::: tip  [Lombok](https://projectlombok.org/) 简介
-Project Lombok is a java library that automatically plugs into your editor and build tools, spicing up your java.  
+::: tip [Lombok](https://projectlombok.org/) 简介
+Project Lombok is a java library that automatically plugs into your editor and build tools, spicing up your java.
 
-Never write another getter or equals method again, with one  annotation your class has a fully featured builder, Automate your  logging variables, and much more. [1]
+Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more. [1]
 :::
 
 上方是 Lombok 官方的简介，看不懂的同学也没关系，笔者按它实际的体验简单给你介绍下。
 
-Lombok 是一个 Java 库，这个库提供了很多注解，这些注解会在代码编译的时候，帮助我们自动生成 `getter` 、`setter`、`equals`、`hashCode` 等等方法，这样我们就可以摆脱曾经的苦恼了。  
+Lombok 是一个 Java 库，这个库提供了很多注解，这些注解会在代码编译的时候，帮助我们自动生成 `getter` 、`setter`、`equals`、`hashCode` 等等方法，这样我们就可以摆脱曾经的苦恼了。
 
 使用上它之后，你甚至会觉得在使用一个基于 Java 构建的新编程语言，下面就是 Lombok 优化上述 Pet 类的冗余代码后的效果。
 
 ```java
 /**
  * 宠物类
- * @author Charles7c
+ * @author
  * @date 2020-01-14
  */
 @Data
@@ -110,7 +110,7 @@ public class Pet {
 
 ## 安装
 
-### IDEA插件安装
+### IDEA 插件安装
 
 ::: tip 笔者说
 截止笔者发文时， IntelliJ IDEA 的 2020.3 版本已经发布了，这一版开始，已经预装了 Lombok 插件，意味着你如果用的这版及之后，可以不用看这一小节了。
@@ -118,13 +118,13 @@ public class Pet {
 
 因为 Lombok 是在项目编译时，根据我们使用的注解，生成我们不想写的冗余代码。 但是 IDE 们可不认识它这一套 "骚操作"，你在 JavaBean 中没写对应的 `getter/setter` 等方法，那么在 IDE 中写代码时想使用对应 JavaBean 的这些方法就是 "天方夜谭"。
 
-也就是说如果你在类中没写 `getter/setter` ，那在 IDE 中编写类时，哪怕已经标注了`@Data`，也无法让 IDE 提示及使用它们。  
+也就是说如果你在类中没写 `getter/setter` ，那在 IDE 中编写类时，哪怕已经标注了`@Data`，也无法让 IDE 提示及使用它们。
 
-想要在 IDE 中正常使用 Lombok，必须先在 IDE 中安装对应的 Lombok 插件。Lombok 为主流的 IDE 提供了插件支持，我们本次就以 IntelliJ IDEA 为例，来安装下插件，并测试使用效果。 
+想要在 IDE 中正常使用 Lombok，必须先在 IDE 中安装对应的 Lombok 插件。Lombok 为主流的 IDE 提供了插件支持，我们本次就以 IntelliJ IDEA 为例，来安装下插件，并测试使用效果。
 
 ![202101140900568](../../../../../public/img/2021/01/14/202101140900568.png)
 
-其实 Lombok 官网对各种 IDE 如何安装插件是有教程的（[IDEA的教程](https://projectlombok.org/setup/intellij)）。笔者个人认为写得已经很详细了，那接下来笔者就带大家实际操作一遍，你来实现的话记得按我的步骤来。
+其实 Lombok 官网对各种 IDE 如何安装插件是有教程的（[IDEA 的教程](https://projectlombok.org/setup/intellij)）。笔者个人认为写得已经很详细了，那接下来笔者就带大家实际操作一遍，你来实现的话记得按我的步骤来。
 
 首先打开 IDEA，在菜单 `File` 中找到 `Settings` 子菜单。
 
@@ -185,7 +185,7 @@ Lombok 的学习使用，就是要学习它的注解们。但的确很多，笔�
 `@Getter` 和 `@Setter` 这两个注解，顾名思义就是为我们生成对应的 `getter/setter` 方法的，一般情况下直接在类上声明就可以了，这样类中所有的非静态私有属性都会生成 `public` 修饰的 `getter/setter` 方法了。
 
 ::: tip 笔者说
-生成的 `getter` 遵循布尔属性的约定，例如：`boolean` 类型的 `deleted` 生成的 `getter` 方法为 `isDeleted` 而不是 `getDeleted`。 
+生成的 `getter` 遵循布尔属性的约定，例如：`boolean` 类型的 `deleted` 生成的 `getter` 方法为 `isDeleted` 而不是 `getDeleted`。
 :::
 
 ![202101140900573](../../../../../public/img/2021/01/14/202101140900573.png)
@@ -259,7 +259,7 @@ try(InputStream in = new FileInputStream("d:\\a.txt")){
 
 为了解决多线程不安全的问题，我们经常使用 `synchronized` 关键字来进行加锁，可以加在方法上也可以使用代码块来加锁。
 
-`@Synchronized` 注解的效果和 `synchronized` 关键字一样，它可以用在类方法或者实例方法上，是`synchronized` 关键字更安全的变体。  
+`@Synchronized` 注解的效果和 `synchronized` 关键字一样，它可以用在类方法或者实例方法上，是`synchronized` 关键字更安全的变体。
 
 区别在于锁对象不同，对于类方法和实例方法，`synchronized` 关键字的锁对象分别是类的 `class` 对象和 `this` 对象，而 `@Synchronized` 的锁对象则分别是私有静态 final 对象 `$LOCK` 和私有 final 对象 `$lock`。当然，也可以自己指定锁对象。
 
@@ -306,7 +306,7 @@ public class Pet {
 
         PetBuilder() {
         }
-        // 4.属性同名赋值方法  
+        // 4.属性同名赋值方法
         // 【调用完还会返回构建对象，这样可以继续调用其他方法】
         public Pet.PetBuilder name(String name) {
             this.name = name;
@@ -331,13 +331,13 @@ public class Pet {
 
 ### 日志类注解
 
-在开发中，我们常常要使用 log 来记录程序执行过程，Lombok 为我们提供了6种注解，根据不同的注解将生成不同类型的 log 实例，但是实例名称都是 `log`。
+在开发中，我们常常要使用 log 来记录程序执行过程，Lombok 为我们提供了 6 种注解，根据不同的注解将生成不同类型的 log 实例，但是实例名称都是 `log`。
 
 - `@CommonsLog`
 - `@Log`
 - `@Log4j`
 - `@Log4j2`
-- **`@Slf4j(推荐)`**  
+- **`@Slf4j(推荐)`**
 - `@XSlf4j`
 
 ```java
@@ -348,28 +348,28 @@ public class UserController {
     @GetMapping
     public Result findAll() {
         // 直接使用 log 实例
-        log.info("用户列表查询");    
+        log.info("用户列表查询");
     }
 }
 ```
 
 ::: tip 笔者说
-SLF4J（Simple Logging Facade For Java，为 Java 提供的简单日志门面）。在阿里巴巴 Java 开发手册日志规约中强调，如果要使用日志 API ，必须使用日志门面 API 而不是具体日志框架的 API。  
+SLF4J（Simple Logging Facade For Java，为 Java 提供的简单日志门面）。在阿里巴巴 Java 开发手册日志规约中强调，如果要使用日志 API ，必须使用日志门面 API 而不是具体日志框架的 API。
 
 ![202101140900591](../../../../../public/img/2021/01/14/202101140900591.png)
 
-所谓日志门面，其实就是类似于 Java 的 JDBC 一样的一套 API ，有了 JDBC，你无需关心未来切换成哪种关系型数据库，因为获取连接等方法用的是 JDBC 的 API 。  
+所谓日志门面，其实就是类似于 Java 的 JDBC 一样的一套 API ，有了 JDBC，你无需关心未来切换成哪种关系型数据库，因为获取连接等方法用的是 JDBC 的 API 。
 
 同样日志门面，可以让我们无需关心未来切换哪种日志框架，因为获取日志实例用的是日志门面的 API。
 :::
 
 ## Java 14 新特性 Records
 
-2020年3月17日，Java 14 正式 `GA`，虽然我们目前仍然主要使用 Java 8，但更新肯定是趋势，未来升级到 14 或更高的某个版本只是时间问题，所以这些新特性我们还是应该关注关注的。
+2020 年 3 月 17 日，Java 14 正式 `GA`，虽然我们目前仍然主要使用 Java 8，但更新肯定是趋势，未来升级到 14 或更高的某个版本只是时间问题，所以这些新特性我们还是应该关注关注的。
 
-在 Java 14 中有一个预览特性 `Records`，Java 15 对该特性又进行了二次预览，`Records`  提供了一种紧凑的语法来声明类（我们经常用来做类声明的方式有 `class`、`enum` 等，这回又多一个），以帮助开发者写出更简洁的代码。
+在 Java 14 中有一个预览特性 `Records`，Java 15 对该特性又进行了二次预览，`Records` 提供了一种紧凑的语法来声明类（我们经常用来做类声明的方式有 `class`、`enum` 等，这回又多一个），以帮助开发者写出更简洁的代码。
 
-该特性主要用在特定领域的类，这些类主要用于保存数据，不提供领域行为。再通俗的讲就是我们可以给一些简单的，一般不提供业务操作的类（`POJO类`等）更改下声明类的方法了。更多详情请查看：[Records的官方介绍](https://openjdk.java.net/jeps/359)
+该特性主要用在特定领域的类，这些类主要用于保存数据，不提供领域行为。再通俗的讲就是我们可以给一些简单的，一般不提供业务操作的类（`POJO类`等）更改下声明类的方法了。更多详情请查看：[Records 的官方介绍](https://openjdk.java.net/jeps/359)
 
 ![202101140900593](../../../../../public/img/2021/01/14/202101140900593.png)
 
@@ -377,21 +377,21 @@ SLF4J（Simple Logging Facade For Java，为 Java 提供的简单日志门面）
 
 ```java
 // record 声明类语法
-{ClassModifier} record TypeIdentifier [TypeParameters] 
+{ClassModifier} record TypeIdentifier [TypeParameters]
     (RecordComponents) [SuperInterfaces] [RecordBody]
 // 示例代码：注意这是类，不是方法
 public record Pet(String name,int health){
-    
+
 }
 ```
 
 ## 参考资料
 
-[1]Project Lombok 简介：https://projectlombok.org
+[1]Project Lombok 简介：<https://projectlombok.org>
 
-[2]Lombok常用注解：https://www.cnblogs.com/mayhh/p/10113169.html
+[2]Lombok 常用注解：<https://www.cnblogs.com/mayhh/p/10113169.html>
 
-[3]Records介绍：https://openjdk.java.net/jeps/359
+[3]Records 介绍：<https://openjdk.java.net/jeps/359>
 
 ## 后记
 
@@ -410,4 +410,3 @@ Lombok 入门到这里也就介绍完了，感觉怎么样？这只是个入门�
 
 所以在笔者的文章中，前期基本都是小白文，仅仅穿插很少量的源码研究。当然等小白文更新多了，你们还依然喜欢，后期会不定时专门对部分技术的源码进行解析。
 :::
-

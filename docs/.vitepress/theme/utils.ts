@@ -36,7 +36,7 @@ export function getQueryParam(paramName) {
  * @param paramName 参数名
  * @param paramValue 参数值
  */
-export function goToLink(url, paramName, paramValue) {
+export function goToLink(url, paramName?, paramValue?) {
   if (paramName) {
     window.location.href = url + "?" + paramName + "=" + paramValue;
   } else {

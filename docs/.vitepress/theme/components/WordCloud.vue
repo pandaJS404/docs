@@ -1,15 +1,15 @@
 <template>
-  <div id="wordcloud-container"></div>
+  <div id="wordCloud-container"></div>
 </template>
 
 <script lang="ts" setup>
-import { onMounted, onBeforeUnmount } from "vue";
+import { onMounted, onBeforeUnmount, PropType } from "vue";
 import { WordCloud } from "@antv/g2plot";
 
 // 定义属性
 const props = defineProps({
   dataList: {
-    type: Array,
+    type: Array as any,
     default: () => [],
   },
 });
@@ -17,7 +17,7 @@ const props = defineProps({
 // 渲染 WordCloud
 let wordCloud;
 onMounted(() => {
-  wordCloud = new WordCloud("wordcloud-container", {
+  wordCloud = new WordCloud("wordCloud-container", {
     data: props.dataList,
     wordField: "name",
     weightField: "value",
