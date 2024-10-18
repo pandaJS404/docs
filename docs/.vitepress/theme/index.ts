@@ -2,6 +2,7 @@ import DefaultTheme from "vitepress/theme";
 import MyLayout from "./MyLayout.vue";
 import "./styles/vars.css";
 import "./styles/custom.css";
+import "./styles/iconfont.css";
 import axios from "axios";
 import api from "./api/index";
 

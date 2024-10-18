@@ -2,23 +2,7 @@
   <div class="main-container-tag">
     <!-- 头部 -->
     <div class="tag-header-wrapper">
-      <span class="tag-breadcrumb-icon">
-        <svg
-          role="img"
-          viewBox="0 0 1024 1024"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          width="1em"
-          height="1em"
-          class="larkui-icon icon-svg index-module_size_wVASz"
-          style="width: 16px; min-width: 16px; height: 16px"
-        >
-          <defs></defs>
-          <path
-            d="M527.744 32c20.8 0.192 40.32 8.32 55.04 23.04l386.112 386.24c14.912 14.848 23.104 34.56 23.104 55.68 0 20.992-8.192 40.704-23.04 55.552l-416.512 416.512c-14.784 14.784-34.624 22.976-55.68 22.976a78.08 78.08 0 0 1-55.616-23.04L55.104 582.784A78.272 78.272 0 0 1 32 527.552V110.72C32 67.2 67.2 32 110.72 32h417.024zM267.136 267.136a128.064 128.064 0 1 0 181.184 181.12 128.064 128.064 0 0 0-181.184-181.12z"
-          ></path>
-        </svg>
-      </span>
+      <i class="tag-breadcrumb-icon iconfont icon-panda1"></i>
       <span class="tag-breadcrumb-item">我的标签</span>
     </div>
 
@@ -354,9 +338,9 @@ function initWordCloud(tags) {
 }
 </script>
 
-<style scoped>
-/** ---------------Arco样式--------------- */
-/** 卡片样式 */
+<style scoped lang="less">
+// /** ---------------Arco样式--------------- */
+// /** 卡片样式 */
 :deep(.arco-card) {
   background: var(--vp-c-bg);
 }
@@ -367,7 +351,7 @@ function initWordCloud(tags) {
   color: var(--vp-c-text-1);
 }
 
-/** 列表样式 */
+// /** 列表样式 */
 :deep(.arco-list) {
   color: var(--vp-c-text-1);
 }
@@ -382,72 +366,69 @@ function initWordCloud(tags) {
   border-bottom: 1px solid var(--vp-c-gutter);
 }
 
-/** 标签样式 */
+// /** 标签样式 */
 :deep(.arco-tag) {
   background-color: var(--vp-c-bg);
 }
 
-/** ---------------自定义样式--------------- */
-/** 头部样式 */
-.main-container-tag .tag-header-wrapper {
-  padding: 24px 0;
-  margin-bottom: 24px;
-  box-shadow: 0 1px 0 0 var(--vp-c-gutter);
-  -webkit-box-shadow: 0 1px 0 0 var(--vp-c-gutter);
-}
-.main-container-tag .tag-header-wrapper .tag-breadcrumb-icon {
-  position: relative;
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid var(--vp-c-divider);
-  vertical-align: middle;
-}
-.main-container-tag .tag-header-wrapper .tag-breadcrumb-icon .icon-svg {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -8px;
-  margin-top: -8px;
-  fill: #bec0bf;
-}
-svg:not(:root) {
-  overflow: hidden;
-}
-.main-container-tag .tag-header-wrapper .tag-breadcrumb-item {
-  vertical-align: middle;
-  display: inline-block;
-  font-size: 16px;
-  margin-left: 16px;
+// /** ---------------自定义样式--------------- */
+// /** 头部样式 */
+.main-container-tag {
+  .tag-header-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 24px 0;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 0 0 var(--vp-c-gutter);
+
+    .tag-breadcrumb-icon {
+      width: 32px;
+      height: 32px;
+      font-size: 24px;
+      text-align: center;
+      line-height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--vp-c-divider);
+    }
+
+    .tag-breadcrumb-item {
+      vertical-align: middle;
+      display: inline-block;
+      font-size: 16px;
+      margin-left: 16px;
+    }
+  }
+
+  .tag-item {
+    color: var(--vp-c-text-1);
+    border-radius: 50px;
+    line-height: 24px;
+    padding: 12px 12px;
+    margin: 8px 8px 0 0;
+    cursor: pointer;
+    border: 1px solid var(--vp-c-gutter);
+  }
+
+  .tag-title {
+    margin-right: 6px;
+    word-break: normal;
+    white-space: pre-wrap;
+  }
+
+  .tag-checkable-checked {
+    border-color: #3384f5;
+    color: #1672f3;
+  }
+
+  .card-header {
+    color: var(--vp-c-text-1);
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-/** 标签样式 */
-.main-container-tag .tag-item {
-  color: var(--vp-c-text-1);
-  border-radius: 50px;
-  line-height: 24px;
-  padding: 12px 12px;
-  margin: 8px 8px 0 0;
-  cursor: pointer;
-  border: 1px solid var(--vp-c-gutter);
-}
-.main-container-tag .tag-title {
-  margin-right: 6px;
-  word-break: normal;
-  white-space: pre-wrap;
-}
-.main-container-tag .tag-checkable-checked {
-  border-color: #3384f5;
-  color: #1672f3;
-}
-.main-container-tag .card-header {
-  color: var(--vp-c-text-1);
-  font-size: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 @media (min-width: 1440px) {
   :deep(.VPDoc:not(.has-sidebar) .content) {
     max-width: 1104px;
@@ -462,7 +443,7 @@ svg:not(:root) {
   max-width: 1104px;
 }
 
-/** 文章列表样式 */
+// /** 文章列表样式 */
 .main-container-tag .no-result {
   text-align: center;
 }
@@ -484,16 +465,6 @@ svg:not(:root) {
   margin: 8px 0;
 }
 
-.vp-doc a {
-  font-weight: 400;
-  font-size: 14px;
-  color: var(--vp-c-text-1);
-  text-decoration: none;
-}
-.vp-doc a:hover {
-  color: var(--vp-c-brand-1);
-  text-decoration: underline;
-}
 .meta-content a {
   font-size: 14px;
   color: var(--vp-c-text-2);

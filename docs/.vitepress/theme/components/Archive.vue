@@ -169,11 +169,7 @@
         <img
           class="chinese-zodiac"
           @click="goToLink('/archives', 'year', year)"
-          :src="
-            '/img/svg/chinese-zodiac/' +
-            getChineseZodiac(year) +
-            '.svg'
-          "
+          :src="'/img/svg/chinese-zodiac/' + getChineseZodiac(year) + '.svg'"
           :title="getChineseZodiacAlias(year)"
           alt="生肖"
         />
@@ -366,7 +362,7 @@ function initTimeline() {
 initTimeline();
 </script>
 
-<style scoped>
+<style scoped lang="less">
 :deep(.arco-tag) {
   background-color: var(--vp-c-bg);
   color: var(--vp-c-text-1);
@@ -379,95 +375,84 @@ initTimeline();
 .timeline-wrap {
   margin-top: 18px;
   word-break: break-all;
-}
 
-.timeline-wrap .timeline-header {
-  padding-bottom: 20px;
-}
+  .timeline-header {
+    padding-bottom: 20px;
 
-.timeline-wrap .timeline-header .icon {
-  fill: var(--vp-c-text-2);
-  height: 22px;
-  width: 22px;
-}
+    .icon {
+      fill: var(--vp-c-text-2);
+      height: 22px;
+      width: 22px;
+    }
 
-.timeline-wrap .timeline-header .content {
-  position: relative;
-  left: -17px;
-  font-size: 16px;
-}
+    .content {
+      position: relative;
+      left: -17px;
+      font-size: 16px;
+    }
+  }
 
-.timeline-wrap .timeline-item {
-  padding: 0 0 0 20px;
-  border-left: 1px solid #5d9df0;
-  line-height: 1;
-  position: relative;
-}
+  .timeline-item {
+    padding: 0 0 0 20px;
+    border-left: 1px solid #5d9df0;
+    line-height: 1;
+    position: relative;
 
-.timeline-wrap .timeline-item:not(:last-child) {
-  padding-bottom: 20px;
-}
+    &:not(:last-child) {
+      padding-bottom: 20px;
+    }
 
-.timeline-wrap .timeline-item .year {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 0.6em;
-}
+    .year {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 0.6em;
+    }
 
-.timeline-wrap .timeline-item .timeline-item-time {
-  margin-bottom: 12px;
-  width: 200px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    .timeline-item-time {
+      margin-bottom: 12px;
+      width: 200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.timeline-wrap .timeline-item .month {
-  padding: 8px 0 8px 0;
-  display: block;
-  color: var(--vp-c-text-1);
-  font-size: 16px;
-  font-weight: bold;
-  position: relative;
-}
+    .month {
+      padding: 8px 0 8px 0;
+      display: block;
+      color: var(--vp-c-text-1);
+      font-size: 16px;
+      font-weight: bold;
+      position: relative;
+    }
 
-.timeline-wrap .timeline-item .timeline-item-content {
-  font-size: 14px;
-}
+    .timeline-item-content {
+      font-size: 14px;
+    }
 
-.timeline-wrap .timeline-item .articles {
-  line-height: 1;
-  padding-top: 7px;
-}
+    .articles {
+      line-height: 1;
+      padding-top: 7px;
+    }
+    .articles .article {
+      display: block;
+      position: relative;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
 
-.timeline-wrap .timeline-item .articles .article {
-  display: block;
-  position: relative;
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
+    .articles svg {
+      position: absolute;
+      left: -27.5px;
+      top: 3.5px;
+      background: #fff;
+      border: 1px solid #84b9e5;
+      border-radius: 50%;
+      cursor: pointer;
+    }
 
-.timeline-wrap .timeline-item .articles svg {
-  position: absolute;
-  left: -27.5px;
-  top: 3.5px;
-  background: #fff;
-  border: 1px solid #84b9e5;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.timeline-wrap .timeline-item .articles .article span {
-  color: var(--vp-c-text-2);
-}
-
-.vp-doc a {
-  font-weight: 400;
-  color: var(--vp-c-text-1);
-  text-decoration: none;
-}
-.vp-doc a:hover {
-  color: var(--vp-c-brand-1);
-  text-decoration: underline;
+    .articles .article span {
+      color: var(--vp-c-text-2);
+    }
+  }
 }
 </style>
