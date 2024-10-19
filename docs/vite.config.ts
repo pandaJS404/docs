@@ -4,6 +4,7 @@ import { ArcoResolver } from 'unplugin-vue-components/resolvers';
 
 export default defineConfig({
   plugins: [
+    //@ts-ignore
     Components({
       dirs: ['.vitepress/theme/components'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
@@ -20,7 +21,7 @@ export default defineConfig({
     host: true,
     open: true,
     hmr: true,
-    port: 9999,
+    port: 8888,
     proxy: {
     },
   },
