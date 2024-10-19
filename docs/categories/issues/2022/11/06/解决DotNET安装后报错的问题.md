@@ -3,7 +3,7 @@ title: 解决 DotNet 安装
 author: PandaJS
 date: 2022/11/06 15:35
 categories:
-  - Bug万象集
+  - BUG踩坑集
 tags:
   - JavaScript
   - Linux

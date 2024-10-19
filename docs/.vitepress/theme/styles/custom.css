@@ -72,23 +72,6 @@ mjx-container {
   margin: auto 2px -2px;
 }
 
-mjx-container > svg {
-  margin: auto;
-}
-
-.chinese-zodiac {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  left: -10.5px;
-  top: -1px;
-  background: #fff;
-  border: 1px solid #84b9e5;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
 .text-color-red {
   --color-red: 254 45 70;
   --tw-text-opacity: 1;

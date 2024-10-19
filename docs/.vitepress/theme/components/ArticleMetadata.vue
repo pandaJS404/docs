@@ -157,9 +157,10 @@ p {
 
 .meta-list {
   display: flex;
-  gap: 15px;
   align-items: center;
   align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
   margin-top: 15px;
 
   .meta-item {

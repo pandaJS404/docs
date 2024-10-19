@@ -3,7 +3,7 @@ title: Maven 传递依赖污染的问题
 author: PandaJS
 date: 2022/11/21 21:30
 categories:
-  - Bug万象集
+  - BUG踩坑集
 tags:
   - Maven
   - JavaScript
