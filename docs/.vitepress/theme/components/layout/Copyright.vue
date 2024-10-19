@@ -3,7 +3,7 @@
   <div class="copyright">
     <div class="content">
       <div class="item">
-        <span>版权属于：</span>
+        <span><i class="iconfont16 iconfont icon-auther"></i>版权属于：</span>
         <span>
           <a
             v-if="isOriginal"
@@ -12,26 +12,23 @@
             target="_blank"
             >{{ author }}</a
           >
-          <span v-else :title="author">{{ author }}</span>
+          <span v-else>{{ author }}</span>
         </span>
       </div>
       <div class="item">
+        <i class="iconfont16 iconfont icon-lianjie"></i>
         <span v-if="isOriginal">本文链接：</span>
         <span v-else>原文链接：</span>
         <span>
-          <a v-if="isOriginal" :href="articleLink" target="_blank">{{
-            articleLink
-          }}</a>
-          <a v-else :href="articleLink" target="_blank" :title="articleTitle">{{
-            articleLink
-          }}</a>
+          <a v-if="isOriginal" :href="articleLink">{{ articleLink }}</a>
+          <a v-else :href="articleLink">{{ articleLink }}</a>
         </span>
       </div>
       <div v-if="isOriginal" class="item">
-        <span>作品采用：</span>
+        <span><i class="iconfont16 iconfont icon-shouquan"></i>作品采用：</span>
         <span
-          >《<a :href="theme.copyrightConfig.licenseLink" target="_blank">{{
-            theme.copyrightConfig.license
+          >《<a :href="copyrightConfig.licenseLink" target="_blank">{{
+            copyrightConfig.license
           }}</a
           >》许可协议授权</span
         >
@@ -44,22 +41,22 @@
 import { reactive, toRefs } from "vue";
 import { useData } from "vitepress";
 const { theme, frontmatter } = useData();
+const { copyrightConfig, articleMetadataConfig } = toRefs(theme.value);
 
-const data = reactive({
+const infoData = reactive({
   isOriginal: frontmatter.value?.isOriginal ?? true,
-  author: frontmatter.value?.author ?? theme.value.articleMetadataConfig.author,
+  author: frontmatter.value?.author ?? articleMetadataConfig.value.author,
   authorLink:
-    frontmatter.value?.authorLink ??
-    theme.value.articleMetadataConfig.authorLink,
+    frontmatter.value?.authorLink ?? articleMetadataConfig.value.authorLink,
   articleTitle: frontmatter.value?.articleTitle ?? frontmatter.value.title,
   articleLink:
     frontmatter.value?.articleLink ?? decodeURI(window.location.href),
 });
 const { isOriginal, author, authorLink, articleTitle, articleLink } =
-  toRefs(data);
+  toRefs(infoData);
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .copyright {
   border-color: var(--vp-custom-block-tip-border);
   background-color: var(--vp-custom-block-tip-bg);
@@ -67,24 +64,23 @@ const { isOriginal, author, authorLink, articleTitle, articleLink } =
   color: var(--vp-c-text-2);
   font-size: 15px;
   margin-top: 50px;
-}
+  .content {
+    padding: 13px 16px;
 
-.copyright .content {
-  padding: 13px 16px;
-}
+    .item {
+      margin-bottom: 5px;
+      word-break: break-word;
+      line-height: 22px;
 
-.copyright .content .item {
-  margin-bottom: 5px;
-  word-break: break-word;
-  line-height: 22px;
-}
-
-.copyright .content .item .icon {
-  display: inline-block;
-  height: 16px;
-  width: 16px;
-  margin-right: 0.375rem;
-  vertical-align: -2.5px;
+      .icon {
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        margin-right: 0.375rem;
+        vertical-align: -2.5px;
+      }
+    }
+  }
 }
 
 a {

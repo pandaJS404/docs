@@ -1,6 +1,6 @@
 ---
 title: 解决 DotNet 安装
-author: 查尔斯
+author: PandaJS
 date: 2022/11/06 15:35
 categories:
   - Bug万象集

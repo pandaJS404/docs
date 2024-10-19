@@ -1,6 +1,6 @@
 ---
 title: 解决 Docker 安装 Prometheus
-author: 查尔斯
+author: PandaJS
 date: 2022/11/04 20:30
 categories:
   - Bug万象集

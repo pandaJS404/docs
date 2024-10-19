@@ -14,6 +14,8 @@ const props = defineProps({
   },
 });
 
+const emitClick = defineEmits(["click"]);
+
 // 渲染 WordCloud
 let wordCloud;
 onMounted(() => {
@@ -30,6 +32,9 @@ onMounted(() => {
     // 返回值设置成一个 [0, 1) 区间内的值，
     // 可以让每次渲染的位置相同（前提是每次的宽高一致）。
     random: () => 0.5,
+  });
+  wordCloud.on("element:click", (...args) => {
+    emitClick("click", ...args);
   });
   wordCloud.render();
 });

@@ -41,7 +41,6 @@ h5 {
 
 /* slim scroll bar for windows based web browsers - works on firefox */
 * {
-  scrollbar-color: var(--vp-c-gutter) var(--vp-button-alt-bg);
   scrollbar-width: thin;
 }
 
@@ -49,16 +48,17 @@ h5 {
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
+  cursor: pointer;
 }
 
 /* scrolling handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--vp-c-gutter);
+  background: #bfbfbf;
 }
 
 /* handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--vp-button-alt-hover-bg);
+  background: #bfbfbf;
 }
 
 /* scrolling track/backgronund color */
