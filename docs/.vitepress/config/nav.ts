@@ -4,11 +4,10 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '我的分类',
     items: [
-      { text: '测试分类1', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
-      { text: '测试分类2', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
-      { text: '测试分类3', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
-      { text: '测试分类4', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
-      { text: '测试分类5', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
+      { text: 'BUG 踩坑集', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
+      { text: '随笔记录', link: '/categories/fragments/index', activeMatch: '/categories/fragments/' },
+      { text: '工具四海谈', link: '/categories/tools/index', activeMatch: '/categories/tools/' },
+      { text: '方案春秋志', link: '/categories/solutions/index', activeMatch: '/categories/solutions/' }
     ],
     activeMatch: '/categories/'
   },

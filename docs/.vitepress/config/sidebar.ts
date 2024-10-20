@@ -209,7 +209,7 @@ function addOrderNumber(groups) {
 
   groups.forEach((group, JIndex) => {
     group.items.forEach((item, index) => {
-      const color = textColor[index];
+      const color = textColor[index % textColor.length];
       let serialNum = `<span class="mr-[6px]" style="color: ${color}">${
         index + 1
       }</span>`;
