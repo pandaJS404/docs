@@ -22,8 +22,6 @@ dotnet --version
 
 预想的版本信息没输出，倒是输出了这么一段错误。
 
-![202211061520256](../../../../../public/img/2022/11/06/202211061520256.png)
-
 ```c#
 Process terminated. Couldn't find a valid ICU package installed on the system. Please install libicu using your package manager and try again. Alternatively you can set the configuration flag System.Globalization.Invariant to true if you want to run with no globalization support. Please see https://aka.ms/dotnet-missing-libicu for more information.
    at System.Environment.FailFast(System.String)
@@ -53,8 +51,6 @@ Aborted
 ## 解决方案
 
 实际上这也是因为笔者采用的手动安装方式才导致的问题，如果采用包管理器（在线）安装方式，这个 `libicu` 库会自动被安装好，也就不会出现这个问题了。
-
-![202211061523521](../../../../../public/img/2022/11/06/202211061523521.png)
 
 知道了问题的原因，那就安装一下这个依赖库。
 
