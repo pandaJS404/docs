@@ -1,7 +1,6 @@
 import type { DefaultTheme } from "vitepress";
 import fg from "fast-glob";
 import matter from "gray-matter";
-import { getChineseZodiac, getChineseZodiacAlias } from "../theme/utils.ts";
 const sync = fg.sync;
 
 export const sidebar: DefaultTheme.Config["sidebar"] = {
@@ -207,7 +206,7 @@ function addOrderNumber(groups) {
     "#96BFFF",
   ];
 
-  groups.forEach((group, JIndex) => {
+  groups.forEach(group => {
     group.items.forEach((item, index) => {
       const color = textColor[index % textColor.length];
       let serialNum = `<span class="mr-[6px]" style="color: ${color}">${
