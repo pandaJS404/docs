@@ -48,7 +48,6 @@ import Footer from "./components/layout/Footer.vue";
 
 const { Layout } = DefaultTheme;
 const { page, theme, frontmatter } = useData();
-console.log("🚀 ~ page:", page)
 const hasSidebar = computed(() => {
   return (
     frontmatter.value.aside !== false && frontmatter.value.layout !== "home"

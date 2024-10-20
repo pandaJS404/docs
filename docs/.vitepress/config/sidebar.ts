@@ -79,12 +79,8 @@ function getItemsByDate(path: string) {
 
     // 添加年份分组
     yearGroups.unshift({
-      text: `<img class="chinese-zodiac" style="position: static; vertical-align: middle; padding-bottom: 3px;" src="/img/svg/chinese-zodiac/${getChineseZodiac(
-        year.replace("年", "")
-      )}.svg" title="${getChineseZodiacAlias(
-        year.replace("年", "")
-      )}" alt="生肖">
-            ${year}年 (${articleItems.length}篇)`,
+      // icon-rendingnianfen  年份图标、备选
+      text: `<i class="iconfont iconfont14 icon-rendingnianfen"></i>${year}年 (${articleItems.length}篇)`,
       items: articleItems,
       collapsed: true,
     });
@@ -171,24 +167,53 @@ function getItems(path: string) {
 }
 
 /**
- * 添加序号
+ * 添加序号 + 颜色
  *
  * @param groups 分组数据
  */
 function addOrderNumber(groups) {
-  for (let i = 0; i < groups.length; i++) {
-    for (let j = 0; j < groups[i].items.length; j++) {
-      const items = groups[i].items;
-      const index = j + 1;
-      let indexStyle = `<div class="text-color-gray mr-[6px]" style="font-weight: 550; display: inline-block;">${index}</div>`;
-      if (index == 1) {
-        indexStyle = `<div class="text-color-red mr-[6px]" style="font-weight: 550; display: inline-block;">${index}</div>`;
-      } else if (index == 2) {
-        indexStyle = `<div class="text-color-orange mr-[6px]" style="font-weight: 550; display: inline-block;">${index}</div>`;
-      } else if (index == 3) {
-        indexStyle = `<div class="text-color-yellow mr-[6px]" style="font-weight: 550; display: inline-block;">${index}</div>`;
-      }
-      items[j].text = `${indexStyle}${items[j].text}`;
-    }
-  }
+  const textColor = [
+    "#c23531",
+    "#61a0a8",
+    "#d48265",
+    "#91c7ae",
+    "#749f83",
+    "#ca8622",
+    "#bda29a",
+    "#c4ccd3",
+    "#dd6b66",
+    "#759aa0",
+    "#e69d87",
+    "#8dc1a9",
+    "#ea7e53",
+    "#eedd78",
+    "#73a373",
+    "#73b9bc",
+    "#7289ab",
+    "#91ca8c",
+    "#f49f42",
+    "#37A2DA",
+    "#32C5E9",
+    "#67E0E3",
+    "#9FE6B8",
+    "#FFDB5C",
+    "#ff9f7f",
+    "#fb7293",
+    "#E062AE",
+    "#E690D1",
+    "#e7bcf3",
+    "#9d96f5",
+    "#8378EA",
+    "#96BFFF",
+  ];
+
+  groups.forEach((group, JIndex) => {
+    group.items.forEach((item, index) => {
+      const color = textColor[index];
+      let serialNum = `<span class="mr-[6px]" style="color: ${color}">${
+        index + 1
+      }</span>`;
+      item.text = `${serialNum}${item.text}`;
+    });
+  });
 }

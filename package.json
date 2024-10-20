@@ -29,6 +29,7 @@
     "@antv/g2plot": "2.4.31",
     "axios": "^1.7.7",
     "blueimp-md5": "^2.19.0",
+    "colorjs": "^0.1.9",
     "dayjs": "^1.11.13",
     "fast-glob": "^3.3.2",
     "gitalk": "^1.8.0",

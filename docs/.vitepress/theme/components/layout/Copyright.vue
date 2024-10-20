@@ -8,7 +8,6 @@
           <a
             v-if="isOriginal"
             :href="authorLink"
-            title="进入作者主页"
             target="_blank"
             >{{ author }}</a
           >
