@@ -5,7 +5,7 @@ title: 知识库
 titleTemplate: 个人技术知识库
 
 hero:
-  name: 知识库
+  name: <i class="iconfont icon-index-hero icon-xiongmaobaohu"></i>知识库 V1.0
   text: 记录 & 分享
   tagline: 个人技术知识库
   image:

@@ -1,21 +1,25 @@
 import type { DefaultTheme } from "vitepress";
+
+// 导航栏
 import { nav } from "./nav";
+
+// 侧边栏
 import { sidebar } from "./sidebar";
+
+// 在线搜索
 import { algoliaSearchOptions } from "./search/algolia-search";
+
+// 本地搜索
 import { localSearchOptions } from "./search/local-search";
 
 export const themeConfig: DefaultTheme.Config = {
   nav, // 导航栏配置
   sidebar, // 侧边栏配置
-
   logo: "/logo.png",
-
   outline: {
     level: "deep", // 右侧大纲标题层级
     label: "目录", // 右侧大纲标题文本配置
   },
-
-  darkModeSwitchLabel: "切换日光/暗黑模式",
   lightModeSwitchTitle: "切换到亮色模式",
   darkModeSwitchTitle: "切换到暗黑模式",
   sidebarMenuLabel: "文章",
@@ -47,7 +51,9 @@ export const themeConfig: DefaultTheme.Config = {
   articleMetadataConfig: {
     author: "PandaJS", // 文章全局默认作者名称
     authorLink: "/docs/about/me", // 点击作者名时默认跳转的链接
-    showViewCount: false, // 是否显示文章阅读数, 需要在 docs/.vitepress/theme/api/config.js 及 interface.js 配置好相应 API 接口
+    // 暂未实现文章浏览量统计功能
+    // 是否显示文章阅读数, 需要在 docs/.vitepress/theme/api/config.js 及 interface.js 配置好相应 API 接口
+    showViewCount: false,
   },
   // 自定义扩展: 文章版权配置
   copyrightConfig: {
@@ -55,16 +61,17 @@ export const themeConfig: DefaultTheme.Config = {
     licenseLink: "http://creativecommons.org/licenses/by-sa/4.0/",
   },
   // 自定义扩展: 评论配置
+  // 暂时去掉评论功能
   commentConfig: {
     type: "gitalk",
-    showComment: true, // 是否显示评论
+    showComment: false, // 是否显示评论
   },
   // 自定义扩展: 页脚配置
   footerConfig: {
     showFooter: false, // 是否显示页脚
-    icpRecordCode: "", // ICP备案号
-    publicSecurityRecordCode: "", // 联网备案号
-    copyright: ``, // 版权信息
+    icpRecordCode: "渝ICP备xxxxxxxx号-x", // ICP备案号
+    publicSecurityRecordCode: "渝公网安备 xxxxxxxxxxxxxx号", // 联网备案号
+    copyright: `Copyright ©2024-present PandaJS`, // 版权信息
   },
 
   footer: {
