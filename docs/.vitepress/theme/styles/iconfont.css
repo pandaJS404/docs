@@ -1,5 +1,14 @@
 @import url("//at.alicdn.com/t/c/font_4716380_qdy4qywyxvh.css");
 
+/* 数字 0123456789 */
+/* @font-face {
+  font-family: "阿里妈妈东方大楷 Regular";
+  font-weight: 400;
+  src: url("./fonts/AlimamaDongFangDaKai-Regular.woff2") format("woff2"),
+    url("./fonts/AlimamaDongFangDaKai-Regular.woff") format("woff");
+  font-display: swap;
+} */
+
 .iconfont10 {
   margin-right: 4px;
   font-size: 10px;
