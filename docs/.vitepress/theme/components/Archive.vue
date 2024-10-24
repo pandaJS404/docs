@@ -1,7 +1,7 @@
 <template>
   <div class="timeline-wrap">
     <!-- 时间轴头部 -->
-    <h2 class="timeline-header" @click="goToLink('/docs/docs/archives')">
+    <h2 class="timeline-header" @click="goToLink('/docs/archives')">
       <i class="iconfont iconfont22 icon-guidang"></i>
       <span v-if="queryParams.queryCategory"
         >{{ queryParams.queryCategory }}
@@ -53,8 +53,13 @@
 import { getQueryParam, goToLink } from "../utils.ts";
 //@ts-ignore
 import { data as articleData } from "../../../../article.data.js";
+console.log("🚀 ~ articleData:", articleData)
+//@ts-ignore
+import { data as articleChartData } from "../../../../article_chart.data.js";
+console.log("🚀 ~ articleChartData:", articleChartData)
 import { onMounted, reactive, ref } from "vue";
 import dayjs from "dayjs";
+
 
 // 文章原始数据和归档数据
 let articleCopyData;
@@ -120,7 +125,8 @@ const initTimeline = () => {
 };
 
 initTimeline();
-onMounted(() => {});
+onMounted(() => {
+});
 </script>
 
 <style scoped lang="less">

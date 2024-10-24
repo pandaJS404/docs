@@ -206,7 +206,7 @@ function addOrderNumber(groups) {
     "#96BFFF",
   ];
 
-  groups.forEach(group => {
+  groups.forEach((group) => {
     group.items.forEach((item, index) => {
       const color = textColor[index % textColor.length];
       let serialNum = `<span class="mr-[6px]" style="color: ${color}">${
