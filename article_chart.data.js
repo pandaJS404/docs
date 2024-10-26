@@ -16,15 +16,14 @@ export default {
     return articleFiles.map(articleFile => {
 
       const filePath = articleFile.substring(articleFile.lastIndexOf('/docs/') + 17).replace(/\.md$/, '');
-      console.log("🚀 ~ load ~ filePath:", filePath)
 
-      const [fileName, year, month, date, title] = filePath.split('/')
+      const [classify, year, month, day, title] = filePath.split('/')
       
       return {
-        fileName,
+        classify,
         year,
         month,
-        date,
+        day,
         title,
       }
     })

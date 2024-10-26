@@ -80,6 +80,12 @@ import {
   setGlobalConfig
 } from "./chunk-X2W6F42O.js";
 import {
+  require_zh_cn
+} from "./chunk-OSCIKTR4.js";
+import {
+  require_dayjs_min
+} from "./chunk-ERHNKHTX.js";
+import {
   Comment,
   Fragment,
   Teleport,
@@ -138,15 +144,9 @@ import {
   withModifiers
 } from "./chunk-E3XMU3BF.js";
 import {
-  require_zh_cn
-} from "./chunk-6KMQPRXY.js";
-import {
-  require_dayjs_min
-} from "./chunk-KLOCJB4C.js";
-import {
   __commonJS,
   __toESM
-} from "./chunk-G3PMV62Z.js";
+} from "./chunk-DC5AMYBS.js";
 
 // node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/plugin/customParseFormat.js
 var require_customParseFormat = __commonJS({

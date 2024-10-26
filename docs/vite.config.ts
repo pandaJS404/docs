@@ -11,7 +11,7 @@ export default defineConfig({
       resolvers: [ArcoResolver({ sideEffect: true, resolveIcons: true })]
     }),
   ],
-  ssr: { noExternal: ['@arco-design/web-vue'] },
+  ssr: { noExternal: ['@arco-design/web-vue', 'naive-ui'] },
   resolve: {
     alias: {
       'mermaid': 'mermaid/dist/mermaid.esm.mjs',

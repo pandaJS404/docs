@@ -1,4 +1,5 @@
 <template>
+  <main class="pie" id="pie"></main>
   <div class="timeline-wrap">
     <!-- 时间轴头部 -->
     <h2 class="timeline-header" @click="goToLink('/docs/archives')">
@@ -53,13 +54,12 @@
 import { getQueryParam, goToLink } from "../utils.ts";
 //@ts-ignore
 import { data as articleData } from "../../../../article.data.js";
-console.log("🚀 ~ articleData:", articleData)
 //@ts-ignore
 import { data as articleChartData } from "../../../../article_chart.data.js";
-console.log("🚀 ~ articleChartData:", articleChartData)
+console.log("🚀 ~ articleChartData:", articleChartData);
 import { onMounted, reactive, ref } from "vue";
 import dayjs from "dayjs";
-
+import { Pie } from "@antv/g2plot";
 
 // 文章原始数据和归档数据
 let articleCopyData;
@@ -124,12 +124,65 @@ const initTimeline = () => {
   // }
 };
 
+const initPie = (data) => {
+  const piePlot = new Pie("pie", {
+    appendPadding: 10,
+    data,
+    angleField: "value",
+    colorField: "type",
+    radius: 0.75,
+    label: {
+      type: "spider",
+      labelHeight: 28,
+      content: "{name}\n{value} 篇",
+    },
+    interactions: [
+      { type: "element-active" },
+      { type: "tooltip", enable: false },
+    ],
+  });
+
+  piePlot.render();
+};
+
+const dealPieData = () => {
+  let countedNameObj = articleChartData.reduce((prev, item) => {
+    if (item.classify in prev) {
+      prev[item.classify]++;
+    } else {
+      prev[item.classify] = 1;
+    }
+    return prev;
+  }, {});
+
+  const obj = {
+    fragments: "随笔记录",
+    issues: "BUG 踩坑集",
+    solutions: "方案春秋志",
+    tools: "工具四海谈",
+  };
+  const pieData = Object.keys(countedNameObj).map((key) => {
+    return {
+      type: obj[key],
+      value: countedNameObj[key],
+    };
+  });
+
+  initPie(pieData);
+};
+
 initTimeline();
 onMounted(() => {
+  dealPieData();
 });
 </script>
 
 <style scoped lang="less">
+.pie {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+}
 h4 {
   margin: 0;
   color: #333;

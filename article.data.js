@@ -20,17 +20,17 @@ export default {
         .substring(articleFile.lastIndexOf("/docs/") + 17)
         .replace(/\.md$/, "");
 
-      const [fileName, year, month, date, title] = filePath.split("/");
+      const [classify, year, month, day, title] = filePath.split("/");
       return {
         ...data,
         path: articleFile
           .substring(articleFile.lastIndexOf("/docs/") + 6)
           .replace(/\.md$/, ""),
         pageInfo: {
-          fileName,
+          classify,
           year,
           month,
-          date,
+          day,
           title,
         },
       };

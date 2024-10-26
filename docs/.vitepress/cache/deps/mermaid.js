@@ -1,4 +1,4 @@
-import "./chunk-G3PMV62Z.js";
+import "./chunk-DC5AMYBS.js";
 
 // node_modules/.pnpm/mermaid@9.3.0/node_modules/mermaid/dist/mermaid.esm.mjs
 var __defProp = Object.defineProperty;

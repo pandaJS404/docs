@@ -19,7 +19,9 @@
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-mathjax3": "^4.3.2",
     "mermaid": "9.3.0",
+    "naive-ui": "^2.40.1",
     "unplugin-vue-components": "^0.25.2",
+    "vfonts": "^0.0.3",
     "vite": "^5.4.10",
     "vitepress": "^1.4.1",
     "vitepress-plugin-mermaid": "2.0.8",
@@ -35,6 +37,7 @@
     "gitalk": "^1.8.0",
     "gray-matter": "^4.0.3",
     "jquery": "^3.7.1",
+    "markdown-it-custom-attrs": "^1.0.2",
     "node-localstorage": "^3.0.5"
   },
   "pnpm": {
