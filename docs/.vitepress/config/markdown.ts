@@ -19,6 +19,7 @@ export const markdown: MarkdownOptions = {
 
     // use more markdown-it plugins!
     md.use(mdItCustomAttrs, "image", {
+      lang: "zh-CN",
       "data-fancybox": "gallery",
     });
 

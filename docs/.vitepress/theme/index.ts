@@ -8,6 +8,8 @@ import axios from "axios";
 import api from "./api/index";
 
 import naive from "naive-ui";
+// 通用字体
+import 'vfonts/Lato.css'
 
 export default {
   ...DefaultTheme,

@@ -7,7 +7,7 @@ categories:
   - BUG 踩坑集
 tags:
   - JavaScript
-  - npm
+  - uview
 ---
 
 # vue3 中 uview / uview-plus - DatetimePicker 时间选择器 页面视图不更新， hasInput 属性不更新
