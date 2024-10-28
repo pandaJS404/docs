@@ -12,6 +12,17 @@ export const markdown: MarkdownOptions = {
     dark: 'github-dark-dimmed'
   },
   lineNumbers: true, // 启用行号
+  // @ts-ignore
+  lazyLoading: true, // 设置图片懒加载
+
+  // 全局设置自定义标题 ::: details  ::: danger  ::: warning  ::: tip  ::: info
+  container: {
+    tipLabel: '提示',
+    warningLabel: '警告',
+    dangerLabel: '危险',
+    infoLabel: '信息',
+    detailsLabel: '详细信息'
+  },
 
   config: (md) => {
     md.use(mathjax3);
