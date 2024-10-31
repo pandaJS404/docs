@@ -49,31 +49,41 @@
 }
 
 /**
- * Colors: Palette
+ * Colors: Palette 颜色: 面板
  *
  * The primitive colors used for accent colors. These colors are referenced
  * by functional colors such as "Text", "Background", or "Brand".
+ * 用于强调色的原始颜色。这些颜色由诸如“文本”、“背景”或“品牌”等功能色引用。
  *
  * Each colors have exact same color scale system with 3 levels of solid
  * colors with different brightness, and 1 soft color.
+ * 每种颜色都有完全相同的色阶系统，有3个不同亮度的纯色和1个软色。
  *
  * - `XXX-1`: The most solid color used mainly for colored text. It must
  *   satisfy the contrast ratio against when used on top of `XXX-soft`.
+ * - `XXX-1`：最纯色，主要用于彩色文本。当在“XXX-soft”上面使用时，它必须满足对比度。
  *
  * - `XXX-2`: The color used mainly for hover state of the button.
+ * - `XXX-2`: 主要用于按钮悬停状态的颜色。
  *
  * - `XXX-3`: The color for solid background, such as bg color of the button.
  *    It must satisfy the contrast ratio with pure white (#ffffff) text on
  *    top of it.
+ * - `XXX-3`: 纯色背景的颜色，例如按钮的bg颜色。它必须满足纯白色（#ffffff）文本的对比度。
  *
  * - `XXX-soft`: The color used for subtle background such as custom container
  *    or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
  *    on top of it.
+ * - `XXX-soft`: 用于微妙背景（如自定义容器）的颜色或徽章。当把“XXX-1”颜色放在上面时，
+ *    它必须满足对比度。
  *
  *    The soft color must be semi transparent alpha channel. This is crucial
  *    because it allows adding multiple "soft" colors on top of each other
  *    to create a accent, such as when having inline code block inside
  *    custom containers.
+ *    柔和的颜色必须是半透明的alpha通道。这是至关重要的，
+ *    因为它允许在彼此的顶部添加多个“软”颜色来创建重音，
+ *    例如在自定义容器中使用内联代码块时。
  * -------------------------------------------------------------------------- */
 
 :root {
@@ -143,18 +153,23 @@
 }
 
 /**
- * Colors: Background
+ * Colors: Background  背景色
+ * 
  *
  * - `bg`: The bg color used for main screen.
+ * - `bg`: 用于主屏幕的bg颜色。
  *
  * - `bg-alt`: The alternative bg color used in places such as "sidebar",
  *   or "code block".
+ * - `bg-alt`: 在“侧边栏”或“代码块”等地方使用的替代颜色bg。
  *
  * - `bg-elv`: The elevated bg color. This is used at parts where it "floats",
  *   such as "dialog".
+ * - `bg-elv`: 升高的bg颜色。这是用在它“浮动”的部分，比如“对话框”。
  *
  * - `bg-soft`: The bg color to slightly distinguish some components from
  *   the page. Used for things like "carbon ads" or "table".
+ * - `bg-soft`: 使用bg颜色来略微区分页面中的某些组件。用于“碳广告”或“桌子”之类的东西。
  * -------------------------------------------------------------------------- */
 
 :root {
@@ -172,16 +187,19 @@
 }
 
 /**
- * Colors: Borders
+ * Colors: Borders  边框颜色
  *
  * - `divider`: This is used for separators. This is used to divide sections
  *   within the same components, such as having separator on "h2" heading.
+ * - `divider`: 这用于分隔符。这用于在相同组件中划分部分，例如在“h2”标题上使用分隔符。
  *
  * - `border`: This is designed for borders on interactive components.
  *   For example this should be used for a button outline.
+ * - `border`: 这是为交互式组件的边框设计的。例如，这应该用于按钮轮廓。
  *
  * - `gutter`: This is used to divide components in the page. For example
  *   the header and the lest of the page.
+ * - `gutter`: 这用于划分页面中的组件。例如页眉和页尾。
  * -------------------------------------------------------------------------- */
 
 :root {
@@ -219,24 +237,30 @@
 }
 
 /**
- * Colors: Function
+ * Colors: Function  颜色:函数
  *
  * - `default`: The color used purely for subtle indication without any
  *   special meanings attached to it such as bg color for menu hover state.
+ * - `default`: 颜色纯粹用于微妙的指示，没有附加任何特殊含义，如菜单悬停状态的bg颜色。
  *
  * - `brand`: Used for primary brand colors, such as link text, button with
  *   brand theme, etc.
+ * - `brand`: 用于主要品牌颜色，如链接文本，带有品牌主题的按钮等。
  *
  * - `tip`: Used to indicate useful information. The default theme uses the
  *   brand color for this by default.
+ * - `tip`: 用来表示有用的信息。默认主题默认使用品牌颜色。
  *
  * - `warning`: Used to indicate warning to the users. Used in custom
  *   container, badges, etc.
+ * - `warning`: 用于向用户发出警告。用于定制容器、徽章等。
  *
  * - `danger`: Used to show error, or dangerous message to the users. Used
  *   in custom container, badges, etc.
+ * - `danger`: 用于向用户显示错误或危险信息。用于定制容器、徽章等。
  *
  * To understand the scaling system, refer to "Colors: Palette" section.
+ * 要了解缩放系统，请参阅“颜色：调色板”部分。
  * -------------------------------------------------------------------------- */
 
 :root {

@@ -174,7 +174,10 @@ onMounted(() => {
 // /** ---------------自定义样式--------------- */
 // /** 头部样式 */
 .main-container-tag {
-  user-select: none;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  user-select: none;  
   .tag-header-wrapper {
     display: flex;
     align-items: center;
