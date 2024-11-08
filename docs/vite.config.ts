@@ -19,7 +19,7 @@ export default defineConfig({
   },
   server: {
     host: true,
-    open: true,
+    open: false,
     hmr: true,
     port: 8888,
     proxy: {
