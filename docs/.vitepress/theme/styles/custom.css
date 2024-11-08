@@ -19,9 +19,14 @@ samp {
   font-family: var(--vp-font-family-mono);
 }
 
+.vp-doc h1 {
+  background: linear-gradient(45deg, #12bcfe, #add723);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .vp-doc h2 {
-  margin: 15px 0 0;
-  padding-top: 10px;
   border-top: none;
 }
 
