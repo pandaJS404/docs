@@ -23,13 +23,13 @@ export const head: HeadConfig[] = [
     "link",
     {
       rel: "stylesheet",
-      href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css",
+      href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css",
     },
   ],
   [
     "script",
     {
-      src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js",
+      src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js",
     },
   ],
 
