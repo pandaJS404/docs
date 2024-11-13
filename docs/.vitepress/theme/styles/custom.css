@@ -1,12 +1,12 @@
 /* 灰度模式 */
-/*html {
+/* html {
   filter: grayscale(95%);
   -webkit-filter: grayscale(95%);
   -moz-filter: grayscale(95%);
   -ms-filter: grayscale(95%);
   -o-filter: grayscale(95%);
-  filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=.95);
-}*/
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=.95);
+} */
 
 body {
   font-size: 16px;
@@ -26,18 +26,10 @@ samp {
   -webkit-text-fill-color: transparent;
 }
 
-.vp-doc h2 {
-  border-top: none;
-}
-
 .vp-doc h3,
 h4,
 h5 {
-  margin: 10px 0 0;
-}
-
-.vp-doc h4 {
-  font-size: 18px;
+  margin-top: 10px;
 }
 
 .VPDoc .content-container img {
@@ -59,6 +51,7 @@ h5 {
 /* scrolling handle */
 ::-webkit-scrollbar-thumb {
   background: #bfbfbf;
+  cursor: pointer;
 }
 
 /* handle on hover */

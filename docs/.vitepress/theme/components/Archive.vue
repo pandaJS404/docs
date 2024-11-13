@@ -45,7 +45,7 @@
         </a-timeline-item>
       </template>
 
-      <a-timeline-item dotColor="#0eb0c9" lineColor="#0eb0c9"></a-timeline-item>
+      <a-timeline- dotColor="#0eb0c9" lineColor="#0eb0c9"></a-timeline-
     </a-timeline>
   </div>
 </template>
