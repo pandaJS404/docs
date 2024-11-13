@@ -144,9 +144,11 @@ onMounted(() => {
 :deep(.arco-card) {
   background: var(--vp-c-bg);
 }
+
 :deep(.arco-card-bordered) {
   border: 1px solid var(--vp-c-gutter);
 }
+
 :deep(.arco-card-body) {
   color: var(--vp-c-text-1);
 }
@@ -155,13 +157,16 @@ onMounted(() => {
 :deep(.arco-list) {
   color: var(--vp-c-text-1);
 }
+
 :deep(.arco-list-bordered) {
   border: 1px solid var(--vp-c-gutter);
 }
+
 :deep(.arco-list-split .arco-list-header) {
   color: var(--vp-c-text-1);
   border-bottom: 1px solid var(--vp-c-gutter);
 }
+
 :deep(.arco-list-split .arco-list-item:not(:last-child)) {
   border-bottom: 1px solid var(--vp-c-gutter);
 }
@@ -177,7 +182,9 @@ onMounted(() => {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  user-select: none;  
+  user-select: none;
+  padding: 0 180px;
+
   .tag-header-wrapper {
     display: flex;
     align-items: center;
@@ -238,11 +245,13 @@ onMounted(() => {
     max-width: 1104px;
   }
 }
+
 @media (min-width: 960px) {
   :deep(.VPDoc:not(.has-sidebar) .content) {
     max-width: 1104px;
   }
 }
+
 :deep(.content-container) {
   max-width: 1104px;
 }
@@ -262,6 +271,7 @@ onMounted(() => {
   font-weight: 400;
   line-height: 22px;
 }
+
 .result-item-description {
   word-wrap: break-word;
   line-height: 22px;

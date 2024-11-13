@@ -5,12 +5,9 @@
       <div class="item">
         <span><i class="iconfont16 iconfont icon-auther"></i>版权属于：</span>
         <span>
-          <a
-            v-if="isOriginal"
-            :href="authorLink"
-            target="_blank"
-            >{{ author }}</a
-          >
+          <a v-if="isOriginal" :href="authorLink" target="_blank">{{
+            author
+          }}</a>
           <span v-else>{{ author }}</span>
         </span>
       </div>
@@ -63,6 +60,7 @@ const { isOriginal, author, authorLink, articleTitle, articleLink } =
   color: var(--vp-c-text-2);
   font-size: 15px;
   margin-top: 50px;
+
   .content {
     padding: 13px 16px;
 

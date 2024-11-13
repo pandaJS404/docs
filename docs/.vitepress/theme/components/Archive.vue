@@ -56,7 +56,6 @@ import { getQueryParam, goToLink } from "../utils.ts";
 import { data as articleData } from "../../../../article.data.js";
 //@ts-ignore
 import { data as articleChartData } from "../../../../article_chart.data.js";
-console.log("🚀 ~ articleChartData:", articleChartData);
 import { onMounted, reactive, ref } from "vue";
 import dayjs from "dayjs";
 import { Pie } from "@antv/g2plot";
@@ -183,6 +182,7 @@ onMounted(() => {
   justify-content: center;
   height: 300px;
 }
+
 h4 {
   margin: 0;
   color: #333;
@@ -287,6 +287,7 @@ h5 {
       line-height: 1;
       padding-top: 7px;
     }
+
     .articles .article {
       display: block;
       position: relative;
