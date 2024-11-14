@@ -1,53 +1,60 @@
 <template>
-  <main class="pie" id="pie"></main>
-  <div class="timeline-wrap">
-    <!-- 时间轴头部 -->
-    <h2 class="timeline-header" @click="goToLink('/docs/archives')">
-      <i class="iconfont iconfont22 icon-guidang"></i>
-      <span v-if="queryParams.queryCategory"
-        >{{ queryParams.queryCategory }}
-      </span>
-      <span v-else-if="queryParams.queryTag">{{ queryParams.queryTag }} </span>
-      <span v-else-if="queryParams.queryYear"
-        >{{ queryParams.queryYear }}
-      </span>
-      共 {{ articleCopyData.length }} 篇，未完待续······
-    </h2>
+  <main class="page-container">
+    <main class="pie" id="pie"></main>
+    <div class="timeline-wrap">
+      <!-- 时间轴头部 -->
+      <h2 class="timeline-header" @click="goToLink('/docs/archives')">
+        <i class="iconfont iconfont22 icon-guidang"></i>
+        <span v-if="queryParams.queryCategory"
+          >{{ queryParams.queryCategory }}
+        </span>
+        <span v-else-if="queryParams.queryTag"
+          >{{ queryParams.queryTag }}
+        </span>
+        <span v-else-if="queryParams.queryYear"
+          >{{ queryParams.queryYear }}
+        </span>
+        共 {{ articleCopyData.length }} 篇，未完待续······
+      </h2>
 
-    <a-timeline labelPosition="relative">
-      <template v-for="(item, index) in articleCopyData" :key="index">
-        <a-timeline-item lineColor="#0eb0c9">
-          <template #label>
-            <h4 class="time">{{ dayjs(item.date).format("YYYY-MM-DD") }}</h4>
-          </template>
-          <template #dot>
-            <i
-              v-if="item.categories.includes('BUG踩坑集')"
-              class="timeline-icon iconfont icon-bug"
-            ></i>
-            <i
-              v-else-if="item.categories.includes('随笔记录')"
-              class="timeline-icon iconfont icon-auther"
-            ></i>
-            <i
-              v-else-if="item.categories.includes('方案春秋志')"
-              class="timeline-icon iconfont icon-daima"
-            ></i>
-            <IconClockCircle v-else class="timeline-icon" />
-          </template>
+      <a-timeline labelPosition="relative">
+        <template v-for="(item, index) in articleCopyData" :key="index">
+          <a-timeline-item lineColor="#0eb0c9">
+            <template #label>
+              <h4 class="time">{{ dayjs(item.date).format("YYYY-MM-DD") }}</h4>
+            </template>
+            <template #dot>
+              <i
+                v-if="item.categories.includes('BUG踩坑集')"
+                class="timeline-icon iconfont icon-bug"
+              ></i>
+              <i
+                v-else-if="item.categories.includes('随笔记录')"
+                class="timeline-icon iconfont icon-auther"
+              ></i>
+              <i
+                v-else-if="item.categories.includes('方案春秋志')"
+                class="timeline-icon iconfont icon-daima"
+              ></i>
+              <IconClockCircle v-else class="timeline-icon" />
+            </template>
 
-          <main class="timeline-content">
-            <a :href="item.path" class="title" target="_blank">{{
-              item.title
-            }}</a>
-            <ArticleMetadata :article="item" />
-          </main>
-        </a-timeline-item>
-      </template>
+            <main class="timeline-content">
+              <a :href="item.path" class="title" target="_blank">{{
+                item.title
+              }}</a>
+              <ArticleMetadata :article="item" />
+            </main>
+          </a-timeline-item>
+        </template>
 
-      <a-timeline-item dotColor="#0eb0c9" lineColor="#0eb0c9"></a-timeline-item>
-    </a-timeline>
-  </div>
+        <a-timeline-item
+          dotColor="#0eb0c9"
+          lineColor="#0eb0c9"
+        ></a-timeline-item>
+      </a-timeline>
+    </div>
+  </main>
 </template>
 
 <script lang="ts" setup>
@@ -174,9 +181,17 @@ initTimeline();
 onMounted(() => {
   dealPieData();
 });
+
+defineOptions({
+  name: "Archive",
+});
 </script>
 
 <style scoped lang="less">
+.page-container {
+  padding: 0 180px;
+}
+
 .pie {
   display: flex;
   justify-content: center;

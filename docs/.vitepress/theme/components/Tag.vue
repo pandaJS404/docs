@@ -136,6 +136,10 @@ onMounted(() => {
     toggleTag(Object.keys(articleTags.value)[0]);
   }
 });
+
+defineOptions({
+  name: "Tag",
+});
 </script>
 
 <style scoped lang="less">
