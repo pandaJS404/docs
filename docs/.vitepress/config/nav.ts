@@ -22,9 +22,11 @@ export const nav: DefaultTheme.Config['nav'] = [
     activeMatch: '/archives'
   },
   {
-    text: '动画效果',
-    link: '/animations',
-    activeMatch: '/animations'
+    text: '其他',
+    items: [
+      { text: '动画效果', link: '/animations', activeMatch: '/animations' },
+    ],
+    activeMatch: '/categories/'
   },
   {
     text: '关于',
