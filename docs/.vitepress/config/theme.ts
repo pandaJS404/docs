@@ -10,7 +10,7 @@ import { sidebar } from "./sidebar";
 import { algoliaSearchOptions } from "./search/algolia-search";
 
 // 本地搜索
-import { localSearchOptions } from "./search/local-search";
+// import { localSearchOptions } from "./search/local-search";
 
 export const themeConfig: DefaultTheme.Config = {
   nav, // 导航栏配置

@@ -2,7 +2,9 @@ import type { HeadConfig } from "vitepress";
 import { metaData } from "./constants";
 
 export const head: HeadConfig[] = [
+  // 引入favicon图标
   ["link", { rel: "icon", href: "/docs/favicon.ico" }],
+  // 
   ["meta", { name: "author", content: "pandaJS" }],
   ["meta", { name: "keywords", content: "知识库, 博客, pandaJS" }],
 
@@ -18,18 +20,20 @@ export const head: HeadConfig[] = [
   ["meta", { property: "og:site_name", content: metaData.title }],
   // ["meta", { property: "og:image", content: metaData.image }],
 
+  ["link", { rel: "stylesheet", href: "/docs/.vitepress/theme/styles/reset.css" }],
+
   // 图片预览
   [
     "link",
     {
       rel: "stylesheet",
-      href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css",
+      href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css",
     },
   ],
   [
     "script",
     {
-      src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js",
+      src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js",
     },
   ],
 
