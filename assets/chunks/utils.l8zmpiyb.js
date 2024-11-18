@@ -1,1 +1,0 @@
-function t(n){const e=new RegExp("(^|&)"+n+"=([^&]*)(&|$)");let o=decodeURIComponent(window.location.search.substr(1)).match(e);return o!=null?unescape(o[2]):null}function i(n,e,o){e?window.location.href=n+"?"+e+"="+o:window.location.href=n}export{t as a,i as g};
