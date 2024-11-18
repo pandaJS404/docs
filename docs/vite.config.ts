@@ -1,6 +1,11 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 import Components from 'unplugin-vue-components/vite';
 import { ArcoResolver } from 'unplugin-vue-components/resolvers';
+
+function pathResolve(dir: string) {
+  return resolve(process.cwd(), '.', dir);
+}
 
 export default defineConfig({
   plugins: [
@@ -14,6 +19,8 @@ export default defineConfig({
   ssr: { noExternal: ['@arco-design/web-vue', 'naive-ui'] },
   resolve: {
     alias: {
+      '@': pathResolve('docs') + '/',
+      '@theme': pathResolve('docs/.vitepress/theme') + '/',
       'mermaid': 'mermaid/dist/mermaid.esm.mjs',
     },
   },
