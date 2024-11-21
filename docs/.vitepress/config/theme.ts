@@ -63,7 +63,7 @@ export const themeConfig: DefaultTheme.Config = {
   // 自定义扩展: 评论配置
   // 暂时去掉评论功能
   commentConfig: {
-    type: "gitalk",
+    // type: "valine",
     showComment: false, // 是否显示评论
   },
   // 自定义扩展: 页脚配置

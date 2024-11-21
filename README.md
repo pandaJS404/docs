@@ -37,7 +37,7 @@ pnpm build
 
 - [x] 《我的归档》：自定义时间轴，展示历史文章数据。年份前可展示生肖，还可按分类、标签筛选
 
-- [x] 文章评论：目前仅支持 Gitalk
+- [x] 文章评论：目前仅支持 valine 评论插件，后续可增加更多评论插件支持
 
 - [x] 版权声明：文末显示原创或转载文章的版权声明，可自由配置采用的版权协议
 
@@ -69,8 +69,6 @@ pnpm build
 - [vitejs/vite](https://github.com/vitejs/vite) （参考主页美化）
 - [windicss/docs](https://github.com/windicss/docs) （参考配置文件拆分）
 - [clark-cui/vitepress-blog-zaun](https://github.com/clark-cui/vitepress-blog-zaun) （参考文章标签的数据处理方案）
-- [dingqianwen/my-blog](https://github.com/dingqianwen/my-blog) （参考 Gitalk 配置暗黑主题）
-- [Dedicatus546/Dedicatus546.github.io](https://github.com/Dedicatus546/Dedicatus546.github.io) （参考 Gitalk 跨域调用 API 失效的解决方案）
 - [xiaoxian521/pure-admin-utils-docs](https://github.com/xiaoxian521/pure-admin-utils-docs) （参考词云组件的使用）
 - [arco-design/arco-design-vue](https://github.com/arco-design/arco-design-vue) （使用部分组件及图标）
 - [antvis/G2plot](https://github.com/antvis/G2plot) （使用部分图表）

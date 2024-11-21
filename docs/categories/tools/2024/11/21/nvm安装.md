@@ -2,7 +2,7 @@
 title: NVM安装使用
 description: nvm(Node Version Manager)Node版本管理切换工具、Win下载及安装nvm
 author: PandaJS
-date: 2024/11/23 21:50
+date: 2024/11/21 21:50
 isTop: false
 categories:
   - 工具四海谈

@@ -54,12 +54,11 @@ const { isOriginal, author, authorLink, articleTitle, articleLink } =
 
 <style scoped lang="less">
 .copyright {
-  border-color: var(--vp-custom-block-tip-border);
-  background-color: var(--vp-custom-block-tip-bg);
+  margin: 40px 0 20px;
+  background-image: linear-gradient(to left, #a8edea 0%, #fed6e3 100%);
   border-radius: 6px;
   color: var(--vp-c-text-2);
   font-size: 15px;
-  margin-top: 50px;
 
   .content {
     padding: 13px 16px;

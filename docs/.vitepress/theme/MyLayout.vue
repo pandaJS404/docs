@@ -13,15 +13,8 @@
         />
       </template>
       <template #doc-after>
-        <!-- 评论组件 gitalk -->
-        <!-- <Comment
-          v-if="
-            (theme.commentConfig?.showComment ?? true) &&
-            (frontmatter?.showComment ?? true)
-          "
-          :commentConfig="theme.commentConfig"
-          :key="md5(page.relativePath)"
-        /> -->
+        <!-- 评论组件  -->
+
       </template>
       <template #layout-bottom>
         <!-- 联网备案组件组件 -->
