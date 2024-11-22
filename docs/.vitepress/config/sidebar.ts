@@ -6,7 +6,7 @@ const sync = fg.sync;
 export const sidebar: DefaultTheme.Config["sidebar"] = {
   "/categories/issues/": getItemsByDate("categories/issues"),
   "/categories/fragments/": getItemsByDate("categories/fragments"),
-  "/categories/solutions/": getItemsByDate("categories/solutions"),
+  "/categories/others/": getItemsByDate("categories/others"),
   "/categories/tools/": getItemsByDate("categories/tools"),
 };
 

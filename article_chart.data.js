@@ -6,12 +6,10 @@ const excludedFiles = [
   "index.md",
   "tags.md",
   "archives.md",
-  "me.md",
-  "animations.md",
 ];
 
 export default {
-  watch: ["./docs/**/*.md"],
+  watch: ["./docs/categories/**/*.md"],
   load(watchedFiles) {
     // 排除不必要文件
     const articleFiles = watchedFiles.filter((file) => {

@@ -4,7 +4,7 @@ description: think book Copilot键 改成Ctrl键
 author: PandaJS
 date: 2024/06/25 22:48
 categories:
-  - 方案春秋志
+  - 其他集合
 tags:
   - thinkBook
 ---

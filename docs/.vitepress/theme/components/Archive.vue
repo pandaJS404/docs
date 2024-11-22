@@ -33,7 +33,7 @@
                 class="timeline-icon iconfont icon-auther"
               ></i>
               <i
-                v-else-if="item.categories.includes('方案春秋志')"
+                v-else-if="item.categories.includes('其他集合')"
                 class="timeline-icon iconfont icon-daima"
               ></i>
               <IconClockCircle v-else class="timeline-icon" />
@@ -164,7 +164,7 @@ const dealPieData = () => {
   const obj = {
     fragments: "随笔记录",
     issues: "BUG 踩坑集",
-    solutions: "方案春秋志",
+    others: "其他集合",
     tools: "工具四海谈",
   };
   const pieData = Object.keys(countedNameObj).map((key) => {

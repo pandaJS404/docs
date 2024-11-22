@@ -21,9 +21,9 @@ export const nav: DefaultTheme.Config["nav"] = [
         activeMatch: "/categories/tools/",
       },
       {
-        text: "方案春秋志",
-        link: "/categories/solutions/index",
-        activeMatch: "/categories/solutions/",
+        text: "其他集合",
+        link: "/categories/others/index",
+        activeMatch: "/categories/others/",
       },
     ],
     activeMatch: "/categories/",
