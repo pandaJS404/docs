@@ -2,7 +2,7 @@
   <div class="page-container">
     <n-flex>
       <n-button type="info" @click="handleDealStatus(true)">全部开始</n-button>
-      <n-button type="error" @click="handleDealStatus(true)">全部结束</n-button>
+      <n-button type="error" @click="handleDealStatus(false)">全部结束</n-button>
       <n-button @click="goToLink('/docs/categories/tools/2024/11/14/动画css')"
         >查看</n-button
       >
@@ -86,7 +86,7 @@ defineOptions({
 .page-container {
   width: 100%;
   min-height: 100vh;
-  padding: 0 180px;
+  padding: 10px 180px 0;
   background-image: linear-gradient(135deg, #a7cee0 50%, #d0dea7);
 
   .animation-box {

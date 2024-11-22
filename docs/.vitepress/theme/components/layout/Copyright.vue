@@ -2,7 +2,7 @@
   <!-- 版权组件 -->
   <div class="copyright">
     <div class="content">
-      <div class="item">
+      <p class="item">
         <span><i class="iconfont16 iconfont icon-auther"></i>版权属于：</span>
         <span>
           <a v-if="isOriginal" :href="authorLink" target="_blank">{{
@@ -10,8 +10,8 @@
           }}</a>
           <span v-else>{{ author }}</span>
         </span>
-      </div>
-      <div class="item">
+      </p>
+      <p class="item">
         <i class="iconfont16 iconfont icon-lianjie"></i>
         <span v-if="isOriginal">本文链接：</span>
         <span v-else>原文链接：</span>
@@ -19,8 +19,8 @@
           <a v-if="isOriginal" :href="articleLink">{{ articleLink }}</a>
           <a v-else :href="articleLink">{{ articleLink }}</a>
         </span>
-      </div>
-      <div v-if="isOriginal" class="item">
+      </p>
+      <p v-if="isOriginal" class="item">
         <span><i class="iconfont16 iconfont icon-shouquan"></i>作品采用：</span>
         <span
           >《<a :href="copyrightConfig.licenseLink" target="_blank">{{
@@ -28,7 +28,7 @@
           }}</a
           >》许可协议授权</span
         >
-      </div>
+      </p>
     </div>
   </div>
 </template>
