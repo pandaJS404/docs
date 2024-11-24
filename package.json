@@ -40,6 +40,7 @@
     "blueimp-md5": "^2.19.0",
     "colorjs": "^0.1.9",
     "dayjs": "^1.11.13",
+    "echarts": "^5.5.1",
     "fast-glob": "^3.3.2",
     "gray-matter": "^4.0.3",
     "jquery": "^3.7.1",
