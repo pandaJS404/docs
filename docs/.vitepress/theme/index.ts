@@ -2,7 +2,7 @@ import DefaultTheme from "vitepress/theme";
 import MyLayout from "./MyLayout.vue";
 import "./styles/index.css";
 import axios from "axios";
-import api from "./api/index";
+
 
 import naive from "naive-ui";
 // 通用字体
@@ -19,10 +19,6 @@ export default {
 
     // 全局挂载 API 接口
     ctx.app.config.globalProperties.$http = axios;
-    if (typeof window !== "undefined") {
-      // @ts-ignore
-      window.$api = api;
-    }
 
     // register your custom global components  注册自定义全局组件
     // ctx.app.component('MyGlobalComponent' /* ... */)

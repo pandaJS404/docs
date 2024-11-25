@@ -1,5 +1,6 @@
 import type { DefaultTheme } from "vitepress";
 import fg from "fast-glob";
+console.log("🚀 ~ fg:", fg)
 import matter from "gray-matter";
 const sync = fg.sync;
 
@@ -23,6 +24,14 @@ function getItemsByDate(path: string) {
   let yearGroups: DefaultTheme.SidebarItem[] = [];
   // 置顶数组
   let topArticleItems: DefaultTheme.SidebarItem[] = [];
+
+  sync(`docs/${path}/*`, {
+    onlyDirectories: true,
+    objectMode: true,
+  }).forEach((item) => {
+    console.log("🚀 ~ getItemsByDate ~ item:", item)
+    
+  });
 
   // 1.获取所有年份目录
   sync(`docs/${path}/*`, {

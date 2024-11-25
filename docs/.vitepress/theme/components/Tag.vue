@@ -74,10 +74,13 @@ import md5 from "blueimp-md5";
 import { getQueryParam } from "../utils.ts";
 // @ts-ignore
 import { data as articleData } from "../../../../article.data.js";
-import { finalFormat } from "@/utils";
-import { formatDate } from "@theme/utils";
-console.log("🚀 ~ formatDate:", formatDate(new Date()))
-console.log("🚀 ~ finalFormat:", finalFormat(new Date()));
+import { useData } from "vitepress";
+console.log("🚀 ~ useData:", useData())
+
+// import { finalFormat } from "@/utils";
+// import { formatDate } from "@theme/utils";
+// console.log("🚀 ~ formatDate:", formatDate(new Date()))
+// console.log("🚀 ~ finalFormat:", finalFormat(new Date()));
 
 const articleTags = computed(() => initTags(articleData));
 

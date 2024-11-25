@@ -40,10 +40,6 @@
         }}</time
       >
     </li>
-    <li class="meta-item" v-if="showViewCount">
-      <i class="iconfont icon-guileiyinqing"></i>
-      <span class="meta-content" v-text="viewCount"></span>
-    </li>
     <li class="meta-item" v-if="showCategory">
       <i class="iconfont icon-guileiyinqing"></i>
       <span class="meta-content">
@@ -108,8 +104,6 @@ const data = reactive({
   author: props.article?.author ?? theme.value.articleMetadataConfig.author,
   authorLink:
     props.article?.authorLink ?? theme.value.articleMetadataConfig.authorLink,
-  showViewCount: theme.value.articleMetadataConfig?.showViewCount ?? false,
-  viewCount: 0,
   date: new Date(props.article.date),
   categories: props.article?.categories ?? [],
   tags: props.article?.tags ?? [],
@@ -119,8 +113,6 @@ const {
   isOriginal,
   author,
   authorLink,
-  showViewCount,
-  viewCount,
   date,
   categories,
   tags,
@@ -128,19 +120,6 @@ const {
 } = toRefs(data);
 // toDate,
 
-if (data.showViewCount) {
-  // 记录并获取文章阅读数（使用文章标题 + 发布时间生成 MD5 值，作为文章的唯一标识）
-  onMounted(() => {
-    //@ts-ignore
-    window.$api.getArticleViewCount(
-      md5(props.article.title + props.article.date),
-      location.href,
-      function (viewCountData) {
-        data.viewCount = viewCountData;
-      }
-    );
-  });
-}
 </script>
 
 <style scoped>
