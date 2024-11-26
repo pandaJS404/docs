@@ -77,10 +77,10 @@ import { data as articleData } from "../../../../article.data.js";
 import { useData } from "vitepress";
 console.log("🚀 ~ useData:", useData())
 
-// import { finalFormat } from "@/utils";
+import { finalFormat } from "@/utils";
 // import { formatDate } from "@theme/utils";
 // console.log("🚀 ~ formatDate:", formatDate(new Date()))
-// console.log("🚀 ~ finalFormat:", finalFormat(new Date()));
+console.log("🚀 ~ finalFormat:", finalFormat(new Date()));
 
 const articleTags = computed(() => initTags(articleData));
 

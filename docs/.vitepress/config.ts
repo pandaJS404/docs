@@ -4,6 +4,11 @@ import { metaData } from "./config/constants";
 import { head } from "./config/head";
 import { markdown } from "./config/markdown";
 import { themeConfig } from "./config/theme";
+import { resolve } from 'path';
+
+function pathResolve(dir: string) {
+  return resolve(process.cwd(), '.', dir);
+}
 
 export default withMermaid(
   defineConfig({
