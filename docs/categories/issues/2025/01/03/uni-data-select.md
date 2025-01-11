@@ -365,27 +365,29 @@ export default {
         }
       },
     },
-    // modelValue(val) {
-    //  if (this.multiple && val && val.length > 0) {
-    //   this.currentArr = val
-    //   if (!this.current) {
-    //    this.current = []
-    //   }
-    //   val.forEach(item => {
-    //    let current = this.filterMixinDatacomResData.find(e =>
-    //     e[this.dataValue] == item
-    //    )
-    //    this.current.push(current)
-    //   })
-    //  } else {
-    //   if (val) {
-    //    this.current = this.formatItemName(this.filterMixinDatacomResData.find(e =>
-    //     e[this.dataValue] == val
-    //    ))
-    //   }
-    //  }
-
-    // },
+    modelValue(val) {
+      if (this.multiple) {
+        this.currentArr = val;
+      }
+      // if (this.multiple && val && val.length > 0) {
+      //   this.currentArr = val;
+      //   if (!this.current) {
+      //     this.current = [];
+      //   }
+      //   val.forEach((item) => {
+      //     let current = this.filterMixinDatacomResData.find(
+      //       (e) => e[this.dataValue] == item
+      //     );
+      //     this.current.push(current);
+      //   });
+      // } else {
+      //   if (val) {
+      //     this.current = this.formatItemName(
+      //       this.filterMixinDatacomResData.find((e) => e[this.dataValue] == val)
+      //     );
+      //   }
+      // }
+    },
     // value(val) {
     //  if (this.multiple && val && val.length > 0) {
     //   this.currentArr = val
