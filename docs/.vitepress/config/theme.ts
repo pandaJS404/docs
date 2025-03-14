@@ -10,7 +10,7 @@ import { sidebar } from "./sidebar";
 import { algoliaSearchOptions } from "./search/algolia-search";
 
 // 本地搜索
-// import { localSearchOptions } from "./search/local-search";
+import { localSearchOptions } from "./search/local-search";
 
 export const themeConfig: DefaultTheme.Config = {
   nav, // 导航栏配置
@@ -36,13 +36,13 @@ export const themeConfig: DefaultTheme.Config = {
     text: "在 Github 编辑此页面",
   },
   // 搜索配置（二选一）
-  search: {
-    provider: "algolia",
-    options: algoliaSearchOptions,
+  // search: {
+    // provider: "algolia",
+    // options: algoliaSearchOptions,
     // 本地离线搜索
     // provider: 'local',
     // options: localSearchOptions
-  },
+  // },
   // 导航栏右侧社交链接配置
   socialLinks: [{ icon: "github", link: "https://github.com/pandaJS404/docs" }],
 

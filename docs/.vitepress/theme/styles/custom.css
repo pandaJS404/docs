@@ -97,3 +97,48 @@ mjx-container {
 .mr-\[6px\] {
   margin-right: 6px;
 }
+
+.VPNavBarSearch {
+  flex-grow: 0;
+  padding-left: 0;
+}
+
+.VPNavBar .content {
+  background-color: transparent;
+  background-image: radial-gradient(
+    transparent 1px,
+    var(--vp-nav-bg-color) 2px
+  );
+  background-size: 3px 3px;
+  /* backdrop-filter: blur(2px); */
+  backdrop-filter: saturate(50%) blur(2px);
+  mask: linear-gradient(rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 0) 100%);
+  z-index: 10000;
+
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0 !important;
+}
+.VPNavBar .content-body {
+  display: inline-flex;
+  z-index: 10001;
+  /* background-color: transparent !important; */
+
+  padding-right: calc((100vw - var(--vp-layout-max-width)) / 2 + 0px);
+}
+
+.VPNavBarSearch {
+  background-color: var(--vp-nav-bg-color);
+}
+.VPNavBarMenu {
+  background-color: var(--vp-nav-bg-color);
+}
+.VPNavBarAppearance {
+  background-color: var(--vp-nav-bg-color);
+}
+.VPSocialLinks {
+  background-color: var(--vp-nav-bg-color);
+}
+.VPFlyoutVPNavBarHamburger {
+  background-color: var(--vp-nav-bg-color);
+}
