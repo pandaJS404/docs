@@ -55,7 +55,7 @@ jobs:
       - name: 安装依赖
         run: |
           corepack enable
-          pnpm install --frozen-lockfile
+          pnpm install --no-frozen-lockfile
       # 6、打包
       - name: 构建文档
         env:
