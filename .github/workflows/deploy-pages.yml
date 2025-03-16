@@ -49,6 +49,8 @@ jobs:
       - name: 设置 Node.js
         uses: actions/setup-node@v4
         with:
+          # 依赖中有corepack 无需指定 node版本
+          # node-version: 20
           cache: pnpm
       # 5、安装依赖
       - name: 安装依赖
