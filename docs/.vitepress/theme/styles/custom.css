@@ -112,13 +112,17 @@ mjx-container {
   background-size: 3px 3px;
   /* backdrop-filter: blur(2px); */
   backdrop-filter: saturate(50%) blur(2px);
-  mask: linear-gradient(rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 0) 100%);
+
+  /* mask属性会裁切掉下拉框的值 */
+  /* mask: linear-gradient(rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 0) 100%); */
+
   z-index: 10000;
 
   display: flex;
   justify-content: flex-end;
   padding-right: 0 !important;
 }
+
 .VPNavBar .content-body {
   display: inline-flex;
   z-index: 10001;
@@ -130,15 +134,26 @@ mjx-container {
 .VPNavBarSearch {
   background-color: var(--vp-nav-bg-color);
 }
+
 .VPNavBarMenu {
   background-color: var(--vp-nav-bg-color);
 }
+
 .VPNavBarAppearance {
   background-color: var(--vp-nav-bg-color);
 }
+
 .VPSocialLinks {
   background-color: var(--vp-nav-bg-color);
 }
+
 .VPFlyoutVPNavBarHamburger {
   background-color: var(--vp-nav-bg-color);
 }
+
+/* 兼容首页头部的背景色 */
+/* @media (min-width: 960px) {
+  .VPNavBar:not(.has-sidebar):not(.home.top) {
+    background-color: transparent !important;
+  }
+} */
