@@ -113,6 +113,9 @@ importers:
       vitepress:
         specifier: ^1.6.3
         version: 1.6.3(@algolia/client-search@5.21.0)(@types/node@22.13.10)(async-validator@4.2.5)(axios@1.8.3)(less@4.2.2)(markdown-it-mathjax3@4.3.2(encoding@0.1.13))(postcss@8.5.3)(search-insights@2.7.0)
+      vitepress-plugin-codeblocks-fold:
+        specifier: ^1.2.35
+        version: 1.2.35
       vitepress-plugin-mermaid:
         specifier: 2.0.8
         version: 2.0.8(mermaid@9.3.0)(vite-plugin-md@0.22.5(@vitejs/plugin-vue@5.2.1(vite@5.4.14(@types/node@22.13.10)(less@4.2.2))(vue@3.5.13))(encoding@0.1.13)(happy-dom@8.9.0(encoding@0.1.13))(less@4.2.2)(vite@5.4.14(@types/node@22.13.10)(less@4.2.2)))(vitepress@1.6.3(@algolia/client-search@5.21.0)(@types/node@22.13.10)(async-validator@4.2.5)(axios@1.8.3)(less@4.2.2)(markdown-it-mathjax3@4.3.2(encoding@0.1.13))(postcss@8.5.3)(search-insights@2.7.0))
@@ -2935,6 +2938,9 @@ packages:
         optional: true
       terser:
         optional: true
+
+  vitepress-plugin-codeblocks-fold@1.2.35:
+    resolution: {integrity: sha512-542i4x4s6WyNOAbS6/Gxcx+6V8jIMgCpFPdN1Tm1EMB5JL0o1LcaZ6VVZvYqLjx9sFyP797/AxVtLo6BRjqaTg==}
 
   vitepress-plugin-mermaid@2.0.8:
     resolution: {integrity: sha512-ywWxTeg9kMv7ZPf/igCBF4ZHhWZAyRtbPnA12ICQuNK2AMp7r5IHOfnuX1EJQf8gNdsh8bcvvSvm8Ll92fdOTw==}
@@ -6238,6 +6244,8 @@ snapshots:
       '@types/node': 22.13.10
       fsevents: 2.3.3
       less: 4.2.2
+
+  vitepress-plugin-codeblocks-fold@1.2.35: {}
 
   vitepress-plugin-mermaid@2.0.8(mermaid@9.3.0)(vite-plugin-md@0.22.5(@vitejs/plugin-vue@5.2.1(vite@5.4.14(@types/node@22.13.10)(less@4.2.2))(vue@3.5.13))(encoding@0.1.13)(happy-dom@8.9.0(encoding@0.1.13))(less@4.2.2)(vite@5.4.14(@types/node@22.13.10)(less@4.2.2)))(vitepress@1.6.3(@algolia/client-search@5.21.0)(@types/node@22.13.10)(async-validator@4.2.5)(axios@1.8.3)(less@4.2.2)(markdown-it-mathjax3@4.3.2(encoding@0.1.13))(postcss@8.5.3)(search-insights@2.7.0)):
     dependencies:

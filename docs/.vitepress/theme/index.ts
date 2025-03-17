@@ -3,10 +3,13 @@ import MyLayout from "./MyLayout.vue";
 import "./styles/index.css";
 import axios from "axios";
 
+import { useData, useRoute } from "vitepress";
+import codeblocksFold from "vitepress-plugin-codeblocks-fold"; // 导入方法
+import "vitepress-plugin-codeblocks-fold/style/index.css"; // 导入样式
 
 import naive from "naive-ui";
 // 通用字体
-import 'vfonts/Lato.css'
+import "vfonts/Lato.css";
 
 export default {
   ...DefaultTheme,
@@ -22,5 +25,11 @@ export default {
 
     // register your custom global components  注册自定义全局组件
     // ctx.app.component('MyGlobalComponent' /* ... */)
+  },
+  setup() {
+    // 获取前言和路由
+    const { frontmatter } = useData();
+    const route = useRoute();
+    codeblocksFold({ route, frontmatter }, true);
   },
 };
