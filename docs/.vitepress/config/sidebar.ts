@@ -25,13 +25,13 @@ function getItemsByDate(path: string) {
   // 置顶数组
   let topArticleItems: DefaultTheme.SidebarItem[] = [];
 
-  sync(`docs/${path}/*`, {
-    onlyDirectories: true,
-    objectMode: true,
-  }).forEach((item) => {
-    console.log("🚀 ~ getItemsByDate ~ item:", item)
+  // sync(`docs/${path}/*`, {
+  //   onlyDirectories: true,
+  //   objectMode: true,
+  // }).forEach((item) => {
+  //   console.log("🚀 ~ getItemsByDate ~ item:", item)
     
-  });
+  // });
 
   // 1.获取所有年份目录
   sync(`docs/${path}/*`, {
