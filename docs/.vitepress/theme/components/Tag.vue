@@ -8,6 +8,21 @@
       <span class="tag-breadcrumb-item">我的标签</span>
     </div>
 
+    <!-- <n-button
+        type="primary"
+        @click="test = !test">
+        点击
+      </n-button>
+
+    <collapse>
+      <div v-if="test" style="background-color: aqua;">
+
+        <div style="height: 100px;margin-bottom: 20px;"></div>
+        <div style="height: 100px;"></div>
+        <div style="height: 100px;"></div>
+      </div>
+    </collapse> -->
+
     <!-- 内容 -->
     <div>
       <!-- 标签云 -->
@@ -72,10 +87,13 @@
 import { computed, onMounted, ref } from "vue";
 import md5 from "blueimp-md5";
 import { getQueryParam } from "../utils.ts";
+import collapse from './collapse.vue'
 // @ts-ignore
 import { data as articleData } from "../../../../article.data.js";
 import { useData } from "vitepress";
 console.log("🚀 ~ useData:", useData())
+
+const test = ref(true)
 
 // import { finalFormat } from "@/utils";
 // import { formatDate } from "@theme/utils";
