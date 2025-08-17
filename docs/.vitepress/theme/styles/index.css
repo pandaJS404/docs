@@ -3,3 +3,13 @@
 @import url("./iconfont.css");
 @import url("./animation.css");
 @import url("./common/normalize.css");
+
+@font-face {
+  font-family: "SansCode";
+  src: url('./fonts/GoogleSansCode.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "HarmonyOS_Sans";
+  src: url('./fonts/HarmonyOS_Sans_Black.woff2') format('woff2');
+}
