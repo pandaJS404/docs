@@ -10,6 +10,7 @@
 
 body {
   font-size: 16px;
+  font-family: var(--vp-font-family-mono);
 }
 
 pre,
@@ -24,6 +25,7 @@ samp {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: var(--vp-font-family-mono);
 }
 
 .vp-doc h3,
