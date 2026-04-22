@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="620" viewBox="0 0 1080 620" role="img" aria-label="纯Web前端与Electron前端能力边界对比图">
+  <defs>
+    <marker id="arrow-gray-1" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#b3b3b3" />
+    </marker>
+  </defs>
+  <rect width="1080" height="620" fill="#ffffff" />
+
+  <rect x="135" y="60" width="285" height="110" fill="#fde8ea" stroke="#e79aa0" stroke-width="2" />
+  <text x="277" y="108" font-size="24" text-anchor="middle" fill="#555">🌐 纯Web前端</text>
+  <text x="277" y="143" font-size="22" text-anchor="middle" fill="#555">浏览器沙盒内</text>
+
+  <rect x="115" y="240" width="325" height="120" fill="#ffd8dc" stroke="#ef8d95" stroke-width="2" />
+  <text x="277" y="292" font-size="22" text-anchor="middle" fill="#555">局限：DOM + BOM</text>
+  <text x="277" y="327" font-size="22" text-anchor="middle" fill="#555">无法访问本地系统</text>
+
+  <rect x="80" y="450" width="395" height="120" fill="#ffd6db" stroke="#ef8d95" stroke-width="2" />
+  <text x="277" y="502" font-size="22" text-anchor="middle" fill="#555">能力边界：页面交互、网络API调用</text>
+
+  <rect x="615" y="60" width="365" height="110" fill="#e5f6e7" stroke="#8fc88c" stroke-width="2" />
+  <text x="797" y="108" font-size="24" text-anchor="middle" fill="#555">🖥 Electron 前端</text>
+  <text x="797" y="143" font-size="22" text-anchor="middle" fill="#555">Chromium + Node.js 双内核</text>
+
+  <rect x="635" y="240" width="325" height="120" fill="#daf2da" stroke="#8fc88c" stroke-width="2" />
+  <text x="797" y="292" font-size="22" text-anchor="middle" fill="#555">突破：HTML/CSS/JS</text>
+  <text x="797" y="327" font-size="22" text-anchor="middle" fill="#555">拥有操作系统级权限</text>
+
+  <rect x="585" y="450" width="425" height="120" fill="#d9f0d7" stroke="#79b777" stroke-width="2" />
+  <text x="797" y="493" font-size="22" text-anchor="middle" fill="#555">能力边界：本地文件读写</text>
+  <text x="797" y="528" font-size="22" text-anchor="middle" fill="#555">系统托盘、后台常驻、跨端桌面</text>
+
+  <line x1="277" y1="170" x2="277" y2="240" stroke="#b3b3b3" stroke-width="3" marker-end="url(#arrow-gray-1)" />
+  <line x1="277" y1="360" x2="277" y2="450" stroke="#b3b3b3" stroke-width="3" marker-end="url(#arrow-gray-1)" />
+  <line x1="797" y1="170" x2="797" y2="240" stroke="#b3b3b3" stroke-width="3" marker-end="url(#arrow-gray-1)" />
+  <line x1="797" y1="360" x2="797" y2="450" stroke="#b3b3b3" stroke-width="3" marker-end="url(#arrow-gray-1)" />
+
+  <text x="1018" y="595" font-size="20" text-anchor="end" fill="#bdbdbd">公众号 · 前了个端</text>
+</svg>
