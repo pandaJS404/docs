@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="520" viewBox="0 0 1080 520" role="img" aria-label="Electron AI Agent 架构图">
+  <defs>
+    <marker id="arrow-gray-2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#989898" />
+    </marker>
+  </defs>
+  <rect width="1080" height="520" fill="#ffffff" />
+
+  <rect x="25" y="130" width="260" height="220" fill="#fff5dd" stroke="#edcf76" stroke-width="2" />
+  <text x="155" y="165" font-size="18" text-anchor="middle" fill="#9d7f2a">🧠 大模型（大脑）</text>
+  <rect x="85" y="190" width="140" height="105" fill="#ffe9b8" stroke="#edcf76" stroke-width="2" />
+  <text x="155" y="228" font-size="20" text-anchor="middle" fill="#666">思考+决策</text>
+  <text x="155" y="265" font-size="18" text-anchor="middle" fill="#666">OpenAI / Qwen / DeepSeek</text>
+
+  <rect x="325" y="85" width="190" height="300" fill="#e7f3ff" stroke="#8fc0ec" stroke-width="2" />
+  <text x="420" y="118" font-size="18" text-anchor="middle" fill="#8aa0b4">🌐 前端界面（交互层）</text>
+  <rect x="360" y="205" width="120" height="65" fill="#cfe6ff" stroke="#8fc0ec" stroke-width="2" />
+  <text x="420" y="235" font-size="18" text-anchor="middle" fill="#5a6a79">用户交互</text>
+  <text x="420" y="258" font-size="16" text-anchor="middle" fill="#5a6a79">React / Vue / HTML</text>
+
+  <rect x="540" y="45" width="290" height="390" fill="#ffe8ef" stroke="#e3b0c3" stroke-width="2" />
+  <text x="685" y="76" font-size="18" text-anchor="middle" fill="#a68a96">🖥 Electron 主进程（能力层）</text>
+
+  <rect x="590" y="105" width="190" height="60" fill="#f8b6cb" stroke="#d48ca7" stroke-width="2" />
+  <text x="685" y="131" font-size="17" text-anchor="middle" fill="#4f4f4f">fs 模块</text>
+  <text x="685" y="151" font-size="17" text-anchor="middle" fill="#4f4f4f">本地文件读写</text>
+
+  <rect x="590" y="190" width="190" height="60" fill="#c8efe0" stroke="#79bca4" stroke-width="2" />
+  <text x="685" y="216" font-size="17" text-anchor="middle" fill="#4f4f4f">child_process</text>
+  <text x="685" y="236" font-size="17" text-anchor="middle" fill="#4f4f4f">执行系统命令</text>
+
+  <rect x="590" y="275" width="190" height="60" fill="#d8c8f3" stroke="#a692d0" stroke-width="2" />
+  <text x="685" y="301" font-size="17" text-anchor="middle" fill="#4f4f4f">systemPreferences</text>
+  <text x="685" y="321" font-size="17" text-anchor="middle" fill="#4f4f4f">操作系统配置</text>
+
+  <rect x="590" y="360" width="190" height="60" fill="#e0f1cf" stroke="#9fc17d" stroke-width="2" />
+  <text x="685" y="386" font-size="17" text-anchor="middle" fill="#4f4f4f">globalShortcut</text>
+  <text x="685" y="406" font-size="17" text-anchor="middle" fill="#4f4f4f">全局快捷键监听</text>
+
+  <rect x="850" y="55" width="205" height="370" fill="#eef9e7" stroke="#b6d6a3" stroke-width="2" />
+  <text x="952" y="86" font-size="18" text-anchor="middle" fill="#9fb39a">🧩 操作系统底层能力</text>
+
+  <rect x="895" y="110" width="115" height="50" fill="#ffffff" stroke="#8fc0ec" stroke-width="2" />
+  <text x="952" y="141" font-size="18" text-anchor="middle" fill="#5a6a79">文件系统</text>
+
+  <rect x="895" y="195" width="115" height="50" fill="#ffffff" stroke="#8fc0ec" stroke-width="2" />
+  <text x="952" y="226" font-size="18" text-anchor="middle" fill="#5a6a79">系统进程/网络</text>
+
+  <rect x="895" y="280" width="115" height="50" fill="#ffffff" stroke="#8fc0ec" stroke-width="2" />
+  <text x="952" y="311" font-size="18" text-anchor="middle" fill="#5a6a79">剪贴板/硬件权限</text>
+
+  <rect x="895" y="365" width="115" height="50" fill="#ffffff" stroke="#8fc0ec" stroke-width="2" />
+  <text x="952" y="396" font-size="18" text-anchor="middle" fill="#5a6a79">系统通知/常驻服务</text>
+
+  <line x1="285" y1="240" x2="360" y2="240" stroke="#989898" stroke-width="3" marker-end="url(#arrow-gray-2)" />
+  <line x1="480" y1="225" x2="590" y2="135" stroke="#989898" stroke-width="3" marker-end="url(#arrow-gray-2)" />
+  <line x1="480" y1="240" x2="590" y2="220" stroke="#989898" stroke-width="3" marker-end="url(#arrow-gray-2)" />
+  <line x1="480" y1="255" x2="590" y2="305" stroke="#989898" stroke-width="3" marker-end="url(#arrow-gray-2)" />
+  <line x1="480" y1="270" x2="590" y2="390" stroke="#989898" stroke-width="3" marker-end="url(#arrow-gray-2)" />
+
+  <line x1="780" y1="135" x2="895" y2="135" stroke="#989898" stroke-width="3" marker-end="url(#arrow-gray-2)" />
+  <line x1="780" y1="220" x2="895" y2="220" stroke="#989898" stroke-width="3" marker-end="url(#arrow-gray-2)" />
+  <line x1="780" y1="305" x2="895" y2="305" stroke="#989898" stroke-width="3" marker-end="url(#arrow-gray-2)" />
+  <line x1="780" y1="390" x2="895" y2="390" stroke="#989898" stroke-width="3" marker-end="url(#arrow-gray-2)" />
+
+  <text x="1018" y="488" font-size="20" text-anchor="end" fill="#bdbdbd">公众号 · 前了个端</text>
+</svg>
